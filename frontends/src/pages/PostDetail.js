@@ -4,12 +4,12 @@ import '../App.css';
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 // import superagent from '../library/Superagent';
 let superagent = require('superagent');
-class HomePage extends Component {
+class PostDetail extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      posts: []
+      post: {}
     }
   }
 
@@ -18,48 +18,44 @@ class HomePage extends Component {
   }
 
   _fetchData() {
+    let postId = this.props.params.post_id;
+    console.log(postId)
     superagent
-      .get('https://localhost:3000/api/posts/public_posts')
+      .get('https://localhost:3000/api/posts/' + postId)
       .query({
         token: "8df7154a59394433f558251702beeee0906bd04a"
       })
       .end((err, res) => {
-        console.log(res)
-        console.log(res, err)
         if (typeof res === 'undefined') {
           return
         } else {
-          if(res.body.posts === 'undefined'){
+          console.log(res.body)
+          if(res.body.post === 'undefined'){
             alert(res.body.errors)
           }else{
             this.setState({
-              posts: res.body.posts
+              post: res.body.post
             })
           }
         }
       })
   }
 
-  _postList() {
-    let listQuiz = 'Loading data ...'
-    if(this.state.posts) {
-      listQuiz = this.state.posts.map((v, k) => {
-        return (
-          <a className='btn btn-default' key={k} href={'#/post_detail/' + v.id }>{v.title}</a>
-        )
-      })
-
-      return (
+  _showPost() {
+    let postDetail = 'Loading data ...'
+    if(this.state.post) {
+      postDetail =  (
         <div>
-          {listQuiz}
+          <h3>{this.state.post.title}</h3>
+          <div dangerouslySetInnerHTML={{ __html: this.state.post.content }} />
         </div>
       )
     } else {
-      listQuiz = (<div className='text-center'>No data available</div>)
+      postDetail = (<div className='text-center'>No data available</div>)
     }
     return (
       <div>
-        {listQuiz}
+        {postDetail}
       </div>
     )
   }
@@ -75,11 +71,11 @@ class HomePage extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <section className='listting-posts col-md-12'>
-          { this._postList() }
+          { this._showPost() }
         </section>
       </div>
     );
   }
 }
 
-export default HomePage;
+export default PostDetail;

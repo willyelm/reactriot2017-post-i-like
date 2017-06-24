@@ -11,6 +11,7 @@ import { Router, Route, hashHistory, Redirect } from 'react-router';
 import Layout from './layout/Layout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import PostDetail from './pages/PostDetail';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -18,6 +19,7 @@ ReactDOM.render((
     <Route path="/login" component={LoginPage} />
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
+      <Route path='/post_detail/:post_id' component={PostDetail} />
     </Route>
   </Router>
 ), document.getElementById('root'));

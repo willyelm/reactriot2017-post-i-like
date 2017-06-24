@@ -1,9 +1,11 @@
-body.login {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: url("../images/books_login.jpg") no-repeat;
-  background-size: cover; }
+body {
+  background: url("../images/home-bg.jpg") no-repeat; }
+  body.login {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url("../images/books_login.jpg") no-repeat;
+    background-size: cover; }
 
 img.logo {
   border-radius: 50%; }

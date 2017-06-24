@@ -45,8 +45,23 @@
   }
 }
 
-.navbar {
+nav.navbar {
+  background: rgba(255, 255, 255, 0.7);
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
+}
+
+nav.navbar.navbar-default .navbar-nav > li > a {
+  color: #444;
+  font-size: 15px;
+}
+
+nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .navbar-nav > .active > a {
+  color: #444;
+}
+
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+  color: #000;
+  font-weight: 700;
 }

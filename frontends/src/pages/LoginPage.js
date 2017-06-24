@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import '../Login.css';
+import '../styles/Login.css';
 let Cookies = require('js-cookie');
 let imgLogo = require('../images/logo.jpg');
 let superagent = require('superagent');
@@ -77,7 +77,7 @@ class LoginPage extends Component {
     return (
       <div className='container'>
         <div className='container-form'>
-          <form className="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
+          <form className="col-md-5 col-md-offset-1">
             <div
               className='error-placeholder'
               style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}>
@@ -97,11 +97,8 @@ class LoginPage extends Component {
                 value={this.state.password}
                 onChange={(event) => this.handlePasswordChange(event)}/>
             </div>
-            <div className="checkbox">
+            <div className='text-right forgot-password'>
               <a className='forgot-your-password input-group-custom btn-block' href='#/forgot_password'>Forgot your password?</a>
-              <div className='input-group-custom link-to-sign-up'>
-                Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
-              </div>
             </div>
             <button
               type='submit'
@@ -110,6 +107,9 @@ class LoginPage extends Component {
               onClick = {() => this.handleFormSubmit()}>
               {this.state.buttonLabel}
             </button>
+            <div className='text-right sign-up'>
+              Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
+            </div>
           </form>
         </div>’
       </div>

@@ -1,11 +1,11 @@
 import React from 'react';
 import $ from 'jquery';
 'use strict';
-require('../Login.css');
+require('../styles/Login.css');
 
 class LoginLayout extends React.Component {
   componentDidMount() {
-    $('body').css('background-color', '#3D6998')
+    $('body').addClass('login')
   }
 
   render() {

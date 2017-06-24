@@ -1,8 +1,9 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import $ from 'jquery';
 'use strict';
 require('normalize.css/normalize.css');
-require('../App.css');
+require('../styles/App.css');
 
 class Layout extends React.Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class Layout extends React.Component {
     this.state = {
       activeMenuId: 'dashboard',
     }
+  }
+
+  componentDidMount() {
+    $('body').removeClass('login')
   }
 
   render() {

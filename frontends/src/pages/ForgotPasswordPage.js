@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../Login.css';
+import '../styles/Login.css';
 let imgLogo = require('../images/logo.jpg');
 let superagent = require('superagent');
 

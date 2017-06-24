@@ -10,4 +10,5 @@ class User < ApplicationRecord
     (first_name || '') + ' ' + (last_name || '')
   end
 
+  def send_confirmation_instructions; end
 end

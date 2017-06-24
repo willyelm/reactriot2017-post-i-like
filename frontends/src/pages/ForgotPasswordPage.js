@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import superagent from '../library/Superagent';
 import '../styles/Login.css';
 let imgLogo = require('../images/logo.jpg');
-let superagent = require('superagent');
 
 class ForgotPasswordPage extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class ForgotPasswordPage extends Component {
       signInButtonLabel: 'Sending...'
     });
     superagent
-      .post('http://localhost:3000/api/forgot_password')
+      .post('/api/forgot_password')
       .send({
         email: this.state.email
       })

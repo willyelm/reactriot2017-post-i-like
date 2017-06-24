@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
 import HeaderNav from './HeaderNav.js'
-let superagent = require('superagent');
+import PostReview from './PostReview.js'
+import superagent from '../library/Superagent';
 class HomePage extends Component {
 
   constructor(props) {
@@ -18,7 +19,7 @@ class HomePage extends Component {
 
   _fetchData() {
     superagent
-      .get('http://localhost:3000/api/posts')
+      .get('/api/posts')
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return

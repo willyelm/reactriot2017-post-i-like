@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
-// import superagent from '../library/Superagent';
-let superagent = require('superagent');
+import superagent from '../library/Superagent';
 class PostDetail extends Component {
 
   constructor(props) {
@@ -19,7 +18,7 @@ class PostDetail extends Component {
   _fetchData() {
     let postId = this.props.params.post_id;
     superagent
-      .get('http://localhost:3000/api/posts/' + postId)
+      .get('/api/posts/' + postId)
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return

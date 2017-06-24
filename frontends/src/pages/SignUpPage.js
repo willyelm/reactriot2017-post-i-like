@@ -96,11 +96,12 @@ class SignUpPage extends Component {
   render() {
     return (
       <div className="container">
-        <div className="container-form">
-          <div className='member-component col-lg-7 col-md-10 clearfix'>
+        <div className="container-form-sign-up">
+          <div className='member-component col-md-5 col-md-offset-1 clearfix'>
             <div className='member-component-box'>
               <div className='member-component-wrapper'>
-                <div className='header form-group-custom text-center'>Sign up for new account</div>
+                <div className='header form-group-custom text-left'>Sign up for new account</div>
+                <hr/>
                 <div className='form-group-custom'>
                   <div
                     className='error-placeholder'
@@ -148,22 +149,23 @@ class SignUpPage extends Component {
                       value={this.state.rePassword}
                       onChange={(event) => this.handleRePasswordChange(event)}/>
                   </div>
-                  <p  className='sign-up-agree'>By signing up for a Vitamin account, you agree to the Terms and Conditions and Privacy Policy.</p>
+                  <div className='text-right forgot-password'>
+                    <a className='forgot-your-password input-group-custom' href='#/forgot_password'>Forgot your password?</a>
+                  </div>
                   <div className='input-group-custom form-group'>
                     <button
                       type='submit'
-                      className='button-submit btn btn-primary-custom btn-block'
+                      className='button-submit btn btn-primary-custom btn-block btn-css'
                       disabled={this.shouldDisableButton()}
                       onClick = {() => this.handleFormSubmit()}>
                       {this.state.buttonLabel}
                     </button>
                   </div>
-                  <a className='forgot-your-password input-group-custom text-center btn-block' href='#/forgot_password'>Forgot your password?</a>
                 </div>
                 <hr/>
 
-                <div className='input-group-custom link-to-sign-up'>
-                  Already have an account? <a href='#/login'>Sign in here.</a>
+                <div className='input-group-custom link-to-sign-up text-right'>
+                  Already have an account? <br/><a href='#/login'>Sign in here.</a>
                 </div>
               </div>
             </div>

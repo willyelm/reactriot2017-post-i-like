@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  min-height: 768px;
+  background: url('./images/books_login.jpg') no-repeat;
+  background-size: cover;
+}

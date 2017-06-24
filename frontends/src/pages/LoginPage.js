@@ -77,7 +77,9 @@ class LoginPage extends Component {
     return (
       <div className='container'>
         <div className='container-form'>
-          <form className="col-md-5 col-md-offset-1">
+          <form className="sign-in-page col-md-5 col-md-offset-1">
+            <div className="header form-group-custom text-left">Sign In</div>
+            <hr/>
             <div
               className='error-placeholder'
               style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}>

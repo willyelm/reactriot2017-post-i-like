@@ -11,11 +11,17 @@ import { Router, Route, hashHistory, Redirect } from 'react-router';
 import Layout from './layout/Layout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import RegistrationCompletedPage from './pages/RegistrationCompletedPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
     <Redirect from='/' to='/login' />
     <Route path="/login" component={LoginPage} />
+    <Route path="/sign_up" component={SignUpPage} />
+    <Route path='/registration_completed' component={RegistrationCompletedPage} />
+    <Route path='/forgot_password' component={ForgotPasswordPage} />
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
     </Route>

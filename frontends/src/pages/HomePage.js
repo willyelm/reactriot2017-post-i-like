@@ -3,8 +3,7 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import HeaderNav from './HeaderNav.js'
 import PostReview from './PostReview.js'
-// import superagent from '../library/Superagent';
-let superagent = require('superagent');
+import superagent from '../library/Superagent';
 class HomePage extends Component {
 
   constructor(props) {
@@ -20,10 +19,7 @@ class HomePage extends Component {
 
   _fetchData() {
     superagent
-      .get('http://localhost:3000/api/posts/public_posts')
-      .query({
-        token: "8df7154a59394433f558251702beeee0906bd04a"
-      })
+      .get('/api/posts')
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return

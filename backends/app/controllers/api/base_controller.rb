@@ -1,4 +1,5 @@
 module Api
+  # Base
   class BaseController < ActionController::Base
     before_action :authenticate_request, except: %I[
       register_user check_register_token forgot_password reset_password

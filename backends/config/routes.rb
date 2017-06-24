@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     # post '/post_token_to_charge', to: 'posts#create'
     resources :posts do
       collection do
-        get :public_posts
+        get :create_post_url
       end
     end
 

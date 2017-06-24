@@ -11,6 +11,7 @@ import Layout from './layout/Layout';
 import LoginLayout from './layout/LoginLayout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import PostDetail from './pages/PostDetail';
 import SignUpPage from './pages/SignUpPage';
 import RegistrationCompletedPage from './pages/RegistrationCompletedPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
@@ -26,6 +27,7 @@ ReactDOM.render((
     </Route>
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
+      <Route path='/post_detail/:post_id' component={PostDetail} />
     </Route>
   </Router>
 ), document.getElementById('root'));

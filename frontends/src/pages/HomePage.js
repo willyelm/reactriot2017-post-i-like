@@ -26,16 +26,16 @@ class HomePage extends Component {
 
   _fetchData() {
     superagent
-      .get('http://localhost:3000/api/posts/public_posts')
+      .get('https://localhost:3000/api/posts/public_posts')
       .query({
         token: "8df7154a59394433f558251702beeee0906bd04a"
       })
       .end((err, res) => {
+        console.log(res)
         console.log(res, err)
         if (typeof res === 'undefined') {
           return
         } else {
-          console.log(res.body)
           if(res.body.posts === 'undefined'){
             alert(res.body.errors)
           }else{

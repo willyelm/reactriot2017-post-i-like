@@ -21,9 +21,6 @@ class PostDetail extends Component {
     console.log(postId)
     superagent
       .get('http://localhost:3000/api/posts/' + postId)
-      .query({
-        token: "8df7154a59394433f558251702beeee0906bd04a"
-      })
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return

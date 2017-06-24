@@ -22,3 +22,27 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.search-form-modified {
+  position: relative;
+
+  .btn-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  .input-search {
+    padding-right: 30px;
+    width: 285px;
+  }
+}
+
+.navbar {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}

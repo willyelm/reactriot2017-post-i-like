@@ -29,30 +29,30 @@ class Layout extends React.Component {
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
                 <li className="active">
-                  <a href="#">Home <span className="sr-only">(current)</span></a>
+                  <a href="#"><i className="fa fa-home" aria-hidden="true"></i> Home <span className="sr-only">(current)</span></a>
                 </li>
-                <li><a href="#">My posts</a></li>
-                <li><a href="#">How to use</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#"><i className="fa fa-link" aria-hidden="true"></i> My posts</a></li>
+                <li><a href="#"><i className="fa fa-lightbulb-o" aria-hidden="true"></i> How to use</a></li>
+                <li><a href="#"><i className="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
               </ul>
-              <form className="navbar-form navbar-left">
-                <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search" />
-                </div>
-                <button type="submit" className="btn btn-default">Submit</button>
-              </form>
               <ul className="nav navbar-nav navbar-right">
                 <li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span className="caret"></span></a>
+                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i className="fa fa-user-circle-o" aria-hidden="true"></i> Account <span className="caret"></span></a>
                   <ul className="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#"><i className="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
                     <li role="separator" className="divider"></li>
-                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                   </ul>
                 </li>
               </ul>
+              <form className="navbar-form navbar-right">
+                <div className="form-group search-form-modified">
+                  <input type="text" className="form-control input-search" placeholder="Search" />
+                  <button type="submit" className="btn btn-default btn-search">
+                    <i className="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </nav>

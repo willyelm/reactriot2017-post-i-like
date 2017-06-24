@@ -4,19 +4,27 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import './index.css';
-import './App.scss';
+import './styles/App.css';
 import 'core-js/fn/object/assign';
 import { Router, Route, hashHistory, Redirect } from 'react-router';
 import Layout from './layout/Layout';
+import LoginLayout from './layout/LoginLayout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import PostDetail from './pages/PostDetail';
+import SignUpPage from './pages/SignUpPage';
+import RegistrationCompletedPage from './pages/RegistrationCompletedPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
     <Redirect from='/' to='/login' />
-    <Route path="/login" component={LoginPage} />
+    <Route component={LoginLayout}>
+      <Route path="/login" component={LoginPage} />
+      <Route path="/sign_up" component={SignUpPage} />
+      <Route path='/registration_completed' component={RegistrationCompletedPage} />
+      <Route path='/forgot_password' component={ForgotPasswordPage} />
+    </Route>
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
       <Route path='/post_detail/:post_id' component={PostDetail} />

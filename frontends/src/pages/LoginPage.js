@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import '../Login.css';
+import '../styles/Login.css';
 let Cookies = require('js-cookie');
 let imgLogo = require('../images/logo.jpg');
 let superagent = require('superagent');
@@ -47,12 +47,7 @@ class LoginPage extends Component {
         if(res.body.result == 'ok') {
           Cookies.set('user-authentication-token', res.body.authentication, {expires: 2});
           Cookies.set('user-authentication', res.body.user, {expires: 2});
-          if (res.body.user.sign_in_count < 2) {
-            window.location = '#/first_time_login';
-          }
-          else {
-            window.location = '#/spider_chart';
-          }
+          window.location = '#/home';
         } else {
           this.setState({
             errorMessages: res.body.errors,
@@ -81,43 +76,42 @@ class LoginPage extends Component {
   render() {
     return (
       <div className='container'>
-        <p className="text-center">
-          <img src={imgLogo} width="120" height="120" className="logo" />
-        </p>
-        <form>
-          <div
-            className='error-placeholder'
-            style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}>
-            { this.state.errorMessages }
-          </div>
-          <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input id="exampleInputEmail1"
-              type='text' className='form-control'
-              value={this.state.email}
-              onChange={(event) => this.handleEmailChange(event)}/>
-          </div>
-          <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input id="exampleInputPassword1"
-              type='password' className='form-control'
-              value={this.state.password}
-              onChange={(event) => this.handlePasswordChange(event)}/>
-          </div>
-          <div className="checkbox">
-            <a className='forgot-your-password input-group-custom text-center btn-block' href='#/forgot_password'>Forgot your password?</a>
-            <div className='input-group-custom link-to-sign-up text-center'>
+        <div className='container-form'>
+          <form className="col-md-5 col-md-offset-1">
+            <div
+              className='error-placeholder'
+              style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}>
+              { this.state.errorMessages }
+            </div>
+            <div className="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input id="exampleInputEmail1"
+                type='text' className='form-control'
+                value={this.state.email}
+                onChange={(event) => this.handleEmailChange(event)}/>
+            </div>
+            <div className="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input id="exampleInputPassword1"
+                type='password' className='form-control'
+                value={this.state.password}
+                onChange={(event) => this.handlePasswordChange(event)}/>
+            </div>
+            <div className='text-right forgot-password'>
+              <a className='forgot-your-password input-group-custom btn-block' href='#/forgot_password'>Forgot your password?</a>
+            </div>
+            <button
+              type='submit'
+              className='button-submit btn btn-primary-custom btn-block btn-css'
+              disabled={this.shouldDisableButton()}
+              onClick = {() => this.handleFormSubmit()}>
+              {this.state.buttonLabel}
+            </button>
+            <div className='text-right sign-up'>
               Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
             </div>
-          </div>
-          <button
-            type='submit'
-            className='button-submit btn btn-primary-custom btn-block'
-            disabled={this.shouldDisableButton()}
-            onClick = {() => this.handleFormSubmit()}>
-            {this.state.buttonLabel}
-          </button>
-        </form>
+          </form>
+        </div>’
       </div>
     );
   }

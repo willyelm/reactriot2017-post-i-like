@@ -1,0 +1,45 @@
+body {
+  &.login {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('../images/books_login.jpg') no-repeat;
+    background-size: cover;
+  }
+}
+
+img.logo {
+  border-radius: 50%;
+}
+
+.container-form {
+  margin-top: 150px;
+  form {
+    font-size: 18px;
+    .form-group {
+      .form-control {
+        height: 50px;
+        font-size: 18px;
+        color: #333;
+      }
+    }
+    .btn-css {
+      height: 50px;
+      font-size: 18px;
+      color: #333;
+      background-color: #c28a42;
+    }
+
+    .forgot-password {
+      margin-bottom: 15px;
+    }
+
+    .sign-up {
+      margin-top: 15px;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+}

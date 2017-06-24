@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import HeaderNav from './HeaderNav.js'
+import PostReview from './PostReview.js'
 // import superagent from '../library/Superagent';
 let superagent = require('superagent');
 class HomePage extends Component {

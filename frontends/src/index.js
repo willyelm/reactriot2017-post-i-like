@@ -9,6 +9,7 @@ import './App.scss';
 import 'core-js/fn/object/assign';
 import { Router, Route, hashHistory, Redirect } from 'react-router';
 import Layout from './layout/Layout';
+import LoginLayout from './layout/LoginLayout';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
@@ -18,10 +19,12 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 ReactDOM.render((
   <Router history={hashHistory}>
     <Redirect from='/' to='/login' />
-    <Route path="/login" component={LoginPage} />
-    <Route path="/sign_up" component={SignUpPage} />
-    <Route path='/registration_completed' component={RegistrationCompletedPage} />
-    <Route path='/forgot_password' component={ForgotPasswordPage} />
+    <Route component={LoginLayout}>
+      <Route path="/login" component={LoginPage} />
+      <Route path="/sign_up" component={SignUpPage} />
+      <Route path='/registration_completed' component={RegistrationCompletedPage} />
+      <Route path='/forgot_password' component={ForgotPasswordPage} />
+    </Route>
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
     </Route>

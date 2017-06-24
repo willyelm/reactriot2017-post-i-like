@@ -47,12 +47,7 @@ class LoginPage extends Component {
         if(res.body.result == 'ok') {
           Cookies.set('user-authentication-token', res.body.authentication, {expires: 2});
           Cookies.set('user-authentication', res.body.user, {expires: 2});
-          if (res.body.user.sign_in_count < 2) {
-            window.location = '#/first_time_login';
-          }
-          else {
-            window.location = '#/spider_chart';
-          }
+          window.location = '#/home';
         } else {
           this.setState({
             errorMessages: res.body.errors,

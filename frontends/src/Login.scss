@@ -1,3 +1,31 @@
 img.logo {
   border-radius: 50%;
 }
+
+.container-form {
+  margin-top: 150px;
+  form {
+    font-size: 18px;
+    .form-group {
+      .form-control {
+        height: 50px;
+        width: 65%;
+        font-size: 18px;
+        color: #333;
+      }
+    }
+    .checkbox {
+      a {
+        color: #f3f3f3;
+        text-decoration: none;
+      }
+    }
+    .btn-css {
+      height: 50px;
+      font-size: 18px;
+      color: #333;
+      width: 65%;
+      background-color: #c28a42;
+    }
+  }
+}

@@ -76,10 +76,8 @@ class LoginPage extends Component {
   render() {
     return (
       <div className='container'>
-        <p className="text-center">
-          <img src={imgLogo} width="120" height="120" className="logo" />
-        </p>
-        <form>
+      <div className='container-form'>
+        <form className="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1">
           <div
             className='error-placeholder'
             style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}>
@@ -100,19 +98,21 @@ class LoginPage extends Component {
               onChange={(event) => this.handlePasswordChange(event)}/>
           </div>
           <div className="checkbox">
-            <a className='forgot-your-password input-group-custom text-center btn-block' href='#/forgot_password'>Forgot your password?</a>
-            <div className='input-group-custom link-to-sign-up text-center'>
+            <a className='forgot-your-password input-group-custom btn-block' href='#/forgot_password'>Forgot your password?</a>
+            <div className='input-group-custom link-to-sign-up'>
               Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
             </div>
           </div>
           <button
             type='submit'
-            className='button-submit btn btn-primary-custom btn-block'
+            className='button-submit btn btn-primary-custom btn-block btn-css'
             disabled={this.shouldDisableButton()}
             onClick = {() => this.handleFormSubmit()}>
             {this.state.buttonLabel}
           </button>
         </form>
+      </div>
+
       </div>
     );
   }

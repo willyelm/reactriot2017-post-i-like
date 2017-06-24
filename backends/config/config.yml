@@ -1,0 +1,13 @@
+development:
+  protocol: 'http'
+  domain: 'localhost:3000'
+  email_sender: 'noreply@rubify.com'
+  max_users_per_account: 5
+  domain: "localhost:3000"
+  front_domain: "localhost:8000"
+
+test:
+  protocol: 'http'
+  domain: 'localhost:3000'
+  email_sender: 'noreply@rubify.com'
+  max_users_per_account: 5

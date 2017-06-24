@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :categories
   has_many :posts, through: :categories
+
+  def send_confirmation_instructions; end
 end

@@ -5,7 +5,7 @@ class Api::PostsController < ActionController::Base
     if posts.length.positive?
       render json: {
         result: :ok,
-        posts: posts
+        posts: posts.as_json
       }
     else
       render json: {
@@ -25,7 +25,7 @@ class Api::PostsController < ActionController::Base
     if post.present?
       render json: {
         result: :ok,
-        post: post
+        post: post.as_json
       }
     else
       render json: {
@@ -38,7 +38,7 @@ class Api::PostsController < ActionController::Base
     user = User.find_by(token: params[:token])
     if user
       url = params['url']
-      if Post.find_by_url(url).nil
+      if Post.find_by_url(url).nil?
         source = open(url).read
         res = Readability::Document.new(source,:tags=>%w[div pre p h1 h2 h3 h4 td table tr b a img br li ul ol center br hr blockquote em strong sub sup font tbody tt span dl dd t code figure fieldset legend dir noscript textarea iframe], :attributes=>%w[href src align width color height style], :remove_empty_nodes=>false,:clean_conditionally=>true,:weight_classes=>true,:remove_unlikely_candidates=>true)
       

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
 import HeaderNav from './HeaderNav.js'
-import PostReview from './PostReview.js'
-// import superagent from '../library/Superagent';
 let superagent = require('superagent');
 class HomePage extends Component {
 
@@ -48,10 +46,10 @@ class HomePage extends Component {
                   {v.title}
                 </h2>
                 <h3 className="post-subtitle">
-                  Problems look mighty small from 150 miles up
+                  { 'From: ' + v.url }
                 </h3>
               </a>
-              <p className="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+              <p className="post-meta">Posted by <a href="#">{v.author}</a> on {v.created_at}</p>
             </div>
             <hr />
           </div>

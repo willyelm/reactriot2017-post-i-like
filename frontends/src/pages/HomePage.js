@@ -26,23 +26,28 @@ class HomePage extends Component {
         token: "8df7154a59394433f558251702beeee0906bd04a"
       })
       .end((err, res) => {
+        console.log(res, err)
         if (typeof res === 'undefined') {
           return
         } else {
-          console.log(res)
-          this.setState({
-            posts: res.body.posts
-          })
+          console.log(res.body)
+          if(res.body.posts === 'undefined'){
+            alert(res.body.errors)
+          }else{
+            this.setState({
+              posts: res.body.posts
+            })
+          }
         }
       })
   }
 
   _postList() {
     let listQuiz = 'Loading data ...'
-    if(this.state.posts.length > 0) {
+    if(this.state.posts) {
       listQuiz = this.state.posts.map((v, k) => {
         return (
-          <h3>v.title</h3>
+          <a className='btn btn-default' key={k} href={'#/post_detail/' + v.id }>{v.title}</a>
         )
       })
 

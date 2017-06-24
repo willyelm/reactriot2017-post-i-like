@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import superagent from '../library/Superagent';
 import '../styles/Login.css';
 let Cookies = require('js-cookie');
 let imgLogo = require('../images/logo.jpg');
-let superagent = require('superagent');
 
 class LoginPage extends Component {
 
@@ -35,7 +35,7 @@ class LoginPage extends Component {
       buttonLabel: 'Signing In...'
     });
     superagent
-      .post('http://localhost:3000/api/login')
+      .post('/api/login')
       .send({
         email: this.state.email,
         password: this.state.password
@@ -113,7 +113,7 @@ class LoginPage extends Component {
               Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
             </div>
           </form>
-        </div>’
+        </div>
       </div>
     );
   }

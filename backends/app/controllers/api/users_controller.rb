@@ -1,6 +1,6 @@
 module Api
   # API
-  class UsersController < ActionController::Base
+  class UsersController < BaseController
     def create
       if authentication_user.success?
         render json: {

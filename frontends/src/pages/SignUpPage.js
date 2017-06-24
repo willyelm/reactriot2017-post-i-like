@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Login.css';
-let superagent = require('superagent');
+import superagent from '../library/Superagent';
 
 let imgLogo = require('../images/logo.jpg');
 
@@ -41,7 +41,7 @@ class SignUpPage extends Component {
       buttonLabel: 'Signing Up...'
     });
     superagent
-      .post('http://localhost:3000/api/register_user')
+      .post('/api/register_user')
       .send({
         first_name: this.state.firstName,
         last_name: this.state.lastName,

@@ -3,8 +3,7 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import HeaderNav from './HeaderNav.js'
 import PostReview from './PostReview.js'
-// import superagent from '../library/Superagent';
-let superagent = require('superagent');
+import superagent from '../library/Superagent';
 class HomePage extends Component {
 
   constructor(props) {
@@ -20,13 +19,8 @@ class HomePage extends Component {
 
   _fetchData() {
     superagent
-      .get('http://localhost:3000/api/posts/public_posts')
-      .query({
-        token: "8df7154a59394433f558251702beeee0906bd04a"
-      })
+      .get('/api/posts')
       .end((err, res) => {
-        console.log(res)
-        console.log(res, err)
         if (typeof res === 'undefined') {
           return
         } else {
@@ -46,7 +40,20 @@ class HomePage extends Component {
     if(this.state.posts) {
       listQuiz = this.state.posts.map((v, k) => {
         return (
-          <a className='btn btn-default' key={k} href={'#/post_detail/' + v.id }>{v.title}</a>
+          <div key={k}>
+            <div className="post-preview">
+              <a href={'#/post_detail/' + v.id }>
+                <h2 className="post-title">
+                  {v.title}
+                </h2>
+                <h3 className="post-subtitle">
+                  { 'From: ' + v.url }
+                </h3>
+              </a>
+              <p className="post-meta">Posted by <a href="#">{v.author}</a> on {v.created_at}</p>
+            </div>
+            <hr />
+          </div>
         )
       })
 

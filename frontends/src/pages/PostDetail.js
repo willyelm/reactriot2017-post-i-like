@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
-// import superagent from '../library/Superagent';
-let superagent = require('superagent');
+import superagent from '../library/Superagent';
 class PostDetail extends Component {
 
   constructor(props) {
@@ -18,12 +17,8 @@ class PostDetail extends Component {
 
   _fetchData() {
     let postId = this.props.params.post_id;
-    console.log(postId)
     superagent
-      .get('http://localhost:3000/api/posts/' + postId)
-      .query({
-        token: "8df7154a59394433f558251702beeee0906bd04a"
-      })
+      .get('/api/posts/' + postId)
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return
@@ -32,6 +27,7 @@ class PostDetail extends Component {
           if(res.body.post === 'undefined'){
             alert(res.body.errors)
           }else{
+            console.log(res.body.post)
             this.setState({
               post: res.body.post
             })

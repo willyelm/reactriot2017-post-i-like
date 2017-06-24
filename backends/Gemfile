@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'mina', '~> 1.0.3'
+  gem 'mina-multistage', '~> 1.0.3'
 end
 
 group :development do
@@ -60,4 +62,6 @@ gem 'devise'
 gem 'simple_command', '~> 0.0.9'
 
 gem 'jwt', '~> 1.5.4'
+
+gem 'redis-namespace', '~> 1.5.2'
 gem 'sidekiq', '~> 4.2.0'

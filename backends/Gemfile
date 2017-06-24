@@ -60,3 +60,4 @@ gem 'devise'
 gem 'simple_command', '~> 0.0.9'
 
 gem 'jwt', '~> 1.5.4'
+gem 'sidekiq', '~> 4.2.0'

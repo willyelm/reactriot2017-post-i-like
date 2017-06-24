@@ -53,8 +53,6 @@ module Api
     end
 
     def register_user
-      @role = Role.find_by_name(params[:user_role_name])
-      params[:role_id] = @role.id
       register_user = RegisterUser.call(params)
       if register_user.success?
         render json: { result: :ok }, status: 200

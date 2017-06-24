@@ -1,12 +1,14 @@
-body {
-  background: url("../images/home-bg.jpg") no-repeat;
+body.login {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url("../images/books_login.jpg") no-repeat;
   background-size: cover; }
-  body.login {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: url("../images/books_login.jpg") no-repeat;
-    background-size: cover; }
+
+header {
+  background: url("../images/home-bg.jpg") no-repeat;
+  background-size: cover;
+  height: 500px; }
 
 img.logo {
   border-radius: 50%; }

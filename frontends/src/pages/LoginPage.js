@@ -111,7 +111,7 @@ class LoginPage extends Component {
               Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
             </div>
           </form>
-        </div>’
+        </div>
       </div>
     );
   }

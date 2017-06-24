@@ -1,31 +1,11 @@
 .body {
   background: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+ .padding-0 {
+   padding: 0 !important;
+ }
 
 .search-form-modified {
   position: relative;
@@ -37,6 +17,10 @@
     background: none;
     border: none;
     box-shadow: none;
+
+    .fa {
+      font-size: 17px;
+    }
   }
 
   .input-search {
@@ -54,14 +38,15 @@ nav.navbar {
 
 nav.navbar.navbar-default .navbar-nav > li > a {
   color: #444;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .navbar-nav > .active > a {
   color: #444;
 }
 
-.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-  color: #000;
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+  font-size: 25px;
   font-weight: 700;
+  color: #000;
 }

@@ -42,8 +42,16 @@ class PostDetail extends Component {
     if(this.state.post) {
       postDetail =  (
         <div>
-          <h3>{this.state.post.title}</h3>
-          <div dangerouslySetInnerHTML={{ __html: this.state.post.content }} />
+          <div className="post-heading">
+            <h1>{this.state.post.title}</h1>
+            <h2 className="subheading">Problems look mighty small from 150 miles up</h2>
+            <span className="meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</span>
+          </div>
+          <article>
+            <div className="col-md-12 padding-0">
+              <div dangerouslySetInnerHTML={{ __html: this.state.post.content }} />
+            </div>
+          </article>
         </div>
       )
     } else {
@@ -58,18 +66,9 @@ class PostDetail extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <section className='listting-posts col-md-12'>
-          { this._showPost() }
-        </section>
-      </div>
+      <section className='listting-posts col-md-12'>
+        { this._showPost() }
+      </section>
     );
   }
 }

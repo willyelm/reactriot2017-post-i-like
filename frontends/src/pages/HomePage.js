@@ -41,7 +41,20 @@ class HomePage extends Component {
     if(this.state.posts) {
       listQuiz = this.state.posts.map((v, k) => {
         return (
-          <a className='btn btn-default' key={k} href={'#/post_detail/' + v.id }>{v.title}</a>
+          <div key={k}>
+            <div className="post-preview">
+              <a href={'#/post_detail/' + v.id }>
+                <h2 className="post-title">
+                  {v.title}
+                </h2>
+                <h3 className="post-subtitle">
+                  Problems look mighty small from 150 miles up
+                </h3>
+              </a>
+              <p className="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+            </div>
+            <hr />
+          </div>
         )
       })
 

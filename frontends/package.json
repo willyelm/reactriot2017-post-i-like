@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "normalize.css": "^4.0.0",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-router": "^2.8.1",
-    "normalize.css": "^4.0.0"
+    "superagent": "^3.5.2"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.3",

@@ -95,69 +95,77 @@ class SignUpPage extends Component {
 
   render() {
     return (
-      <div className='member-component clearfix'>
-        <div className='member-component-box'>
-          <div className='main-logo'><img src={imgLogo} alt="logo" height="79" width="79"/></div>
-          <div className='member-component-wrapper'>
-            <div className='header form-group-custom text-center'>Sign up for new account</div>
-            <div className='form-group-custom'>
-              <div
-                className='error-placeholder'
-                style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}
-                dangerouslySetInnerHTML={{__html: this.state.errorMessages}}>
+      <div className="container">
+        <div className="container-form">
+          <div className='member-component col-lg-7 col-md-10 clearfix'>
+            <div className='member-component-box'>
+              <div className='member-component-wrapper'>
+                <div className='header form-group-custom text-center'>Sign up for new account</div>
+                <div className='form-group-custom'>
+                  <div
+                    className='error-placeholder'
+                    style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}
+                    dangerouslySetInnerHTML={{__html: this.state.errorMessages}}>
 
-              </div>
-              <div className='input-group-custom'>
-                <label>First Name</label>
-                <input
-                  type='text'
-                  value={this.state.firstName}
-                  onChange={(event) => this.handleFirstNameChange(event)}/>
-              </div>
-              <div className='input-group-custom'>
-                <label>Last Name</label>
-                <input
-                  type='text'
-                  value={this.state.lastName}
-                  onChange={(event) => this.handleLastNameChange(event)}/>
-              </div>
-              <div className='input-group-custom'>
-                <label>E-mail</label>
-                <input
-                  type='text'
-                  value={this.state.email}
-                  onChange={(event) => this.handleEmailChange(event)}/>
-              </div>
-              <div className='input-group-custom'>
-                <label>Password</label>
-                <input
-                  type='password'
-                  value={this.state.password}
-                  onChange={(event) => this.handlePasswordChange(event)}/>
-              </div>
-              <div className='input-group-custom'>
-                <label>Re-enter Password</label>
-                <input
-                  type='password'
-                  value={this.state.rePassword}
-                  onChange={(event) => this.handleRePasswordChange(event)}/>
-              </div>
-              <p  className='sign-up-agree'>By signing up for a Vitamin account, you agree to the Terms and Conditions and Privacy Policy.</p>
-              <div className='input-group-custom'>
-                <button
-                  type='submit'
-                  className='button-submit btn btn-primary-custom btn-block'
-                  disabled={this.shouldDisableButton()}
-                  onClick = {() => this.handleFormSubmit()}>
-                  {this.state.buttonLabel}
-                </button>
-              </div>
-              <a className='forgot-your-password input-group-custom text-center btn-block' href='#/forgot_password'>Forgot your password?</a>
-            </div>
-            <hr/>
+                  </div>
+                  <div className='input-group-custom form-group'>
+                    <label>First Name</label>
+                    <input
+                      className="form-control"
+                      type='text'
+                      value={this.state.firstName}
+                      onChange={(event) => this.handleFirstNameChange(event)}/>
+                  </div>
+                  <div className='input-group-custom form-group'>
+                    <label>Last Name</label>
+                    <input
+                      className="form-control"
+                      type='text'
+                      value={this.state.lastName}
+                      onChange={(event) => this.handleLastNameChange(event)}/>
+                  </div>
+                  <div className='input-group-custom form-group'>
+                    <label>E-mail</label>
+                    <input
+                      className="form-control"
+                      type='text'
+                      value={this.state.email}
+                      onChange={(event) => this.handleEmailChange(event)}/>
+                  </div>
+                  <div className='input-group-custom form-group'>
+                    <label>Password</label>
+                    <input
+                      className="form-control"
+                      type='password'
+                      value={this.state.password}
+                      onChange={(event) => this.handlePasswordChange(event)}/>
+                  </div>
+                  <div className='input-group-custom form-group'>
+                    <label>Re-enter Password</label>
+                    <input
+                      className="form-control"
+                      type='password'
+                      value={this.state.rePassword}
+                      onChange={(event) => this.handleRePasswordChange(event)}/>
+                  </div>
+                  <p  className='sign-up-agree'>By signing up for a Vitamin account, you agree to the Terms and Conditions and Privacy Policy.</p>
+                  <div className='input-group-custom form-group'>
+                    <button
+                      type='submit'
+                      className='button-submit btn btn-primary-custom btn-block'
+                      disabled={this.shouldDisableButton()}
+                      onClick = {() => this.handleFormSubmit()}>
+                      {this.state.buttonLabel}
+                    </button>
+                  </div>
+                  <a className='forgot-your-password input-group-custom text-center btn-block' href='#/forgot_password'>Forgot your password?</a>
+                </div>
+                <hr/>
 
-            <div className='input-group-custom link-to-sign-up text-center'>
-              Already have an account? <a href='#/login'>Sign in here.</a>
+                <div className='input-group-custom link-to-sign-up'>
+                  Already have an account? <a href='#/login'>Sign in here.</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

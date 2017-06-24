@@ -1,5 +1,6 @@
 body {
-  background: url("../images/home-bg.jpg") no-repeat; }
+  background: url("../images/home-bg.jpg") no-repeat;
+  background-size: cover; }
   body.login {
     margin: 0;
     padding: 0;

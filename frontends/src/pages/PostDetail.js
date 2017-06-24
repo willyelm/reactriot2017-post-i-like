@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import '../App.css';
-import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+import '../styles/App.css';
 // import superagent from '../library/Superagent';
 let superagent = require('superagent');
 class PostDetail extends Component {
@@ -21,7 +20,7 @@ class PostDetail extends Component {
     let postId = this.props.params.post_id;
     console.log(postId)
     superagent
-      .get('https://localhost:3000/api/posts/' + postId)
+      .get('http://localhost:3000/api/posts/' + postId)
       .query({
         token: "8df7154a59394433f558251702beeee0906bd04a"
       })

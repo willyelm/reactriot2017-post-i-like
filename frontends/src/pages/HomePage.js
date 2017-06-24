@@ -15,18 +15,12 @@ class HomePage extends Component {
   }
 
   componentWillMount() {
-    // this._fetchData()
-
-    // chrome.bookmarks.create({'parentId': bookmarkBar.id,
-    //                            'title': 'Extension bookmarks'},
-    //                           function(newFolder) {
-    //     console.log("added folder: " + newFolder.title);
-    //   });
+    this._fetchData()
   }
 
   _fetchData() {
     superagent
-      .get('https://localhost:3000/api/posts/public_posts')
+      .get('http://localhost:3000/api/posts/public_posts')
       .query({
         token: "8df7154a59394433f558251702beeee0906bd04a"
       })

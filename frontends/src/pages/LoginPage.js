@@ -84,14 +84,14 @@ class LoginPage extends Component {
               { this.state.errorMessages }
             </div>
             <div className="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label>Email address</label>
               <input id="exampleInputEmail1"
                 type='text' className='form-control'
                 value={this.state.email}
                 onChange={(event) => this.handleEmailChange(event)}/>
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label>Password</label>
               <input id="exampleInputPassword1"
                 type='password' className='form-control'
                 value={this.state.password}

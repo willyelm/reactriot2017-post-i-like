@@ -1,28 +1,72 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
+import '../styles/agency.min.css';
+import agency from '../library/agency';
 
 class AboutPage extends Component {
 
   render() {
     return (
       <div className="container">
-        <div className='container-form'>
-          <div className='member-component col-md-8 col-md-offset-1 clearfix'>
-            <div className='member-component-box'>
-              <div className='member-component-wrapper'>
-                <div className='form-group-custom sign-up-success-title text-left'>Thank you for sign up to Post I Like</div>
-                <div className='form-group-custom sign-up-success-text-1 text-left'>We are ready to active your account.</div>
-                <div className='form-group-custom sign-up-success-text-1 text-left'>All you need to do is to check your email and click on a verification link.</div>
-                <div className='form-group-custom sign-up-success-text-1 text-left'>We wish you an exciting adventure ahead with your bookmark.</div>
-                <div className='button-margin col-md-6 padding-0'>
-                  <a className='btn btn-primary-custom btn-block btn-css' href='#/login'>Back to Sign In</a>
-                </div>
-              </div>
-            </div>
+        <div className="row">
+          <div className="col-lg-12 text-center">
+            <h2 className="section-heading">Our Amazing Team</h2>
+            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
           </div>
         </div>
+        <div className="row">
+            <div className="col-sm-4">
+                <div className="team-member">
+                    <img src="" className="img-responsive img-circle" alt="">
+                    <h4>Kay Garland</h4>
+                    <p className="text-muted">Lead Designer</p>
+                    <ul className="list-inline social-buttons">
+                        <li><a href="#"><i className="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i className="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className="col-sm-4">
+                <div className="team-member">
+                    <img src="" className="img-responsive img-circle" alt="">
+                    <h4>Larry Parker</h4>
+                    <p className="text-muted">Lead Marketer</p>
+                    <ul className="list-inline social-buttons">
+                        <li><a href="#"><i className="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i className="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div className="col-sm-4">
+                <div className="team-member">
+                    <img src="" className="img-responsive img-circle" alt="">
+                    <h4>Diana Pertersen</h4>
+                    <p className="text-muted">Lead Developer</p>
+                    <ul className="list-inline social-buttons">
+                        <li><a href="#"><i className="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i className="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i className="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div className="row">
+            <div className="col-lg-8 col-lg-offset-2 text-center">
+                <p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            </div>
+        </div>
       </div>
-
     );
   }
 }

@@ -2,18 +2,11 @@ module Api
   # Posts
   class PostsController < PublicController
     def index
-      key = "%#{params[:seach]}%"
       posts = Post.where(shared_type: :everyone)
-      if posts.length.positive?
-        render json: {
-          result: :ok,
-          posts: posts
-        }
-      else
-        render json: {
-          errors: 'No data available'
-        }, status: 422
-      end
+      render json: {
+        result: :ok,
+        posts: posts
+      }
     end
 
     def show

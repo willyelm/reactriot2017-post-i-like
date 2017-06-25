@@ -27,7 +27,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    let text =  Cookies.get('user-authentication-token') ? 'Logout' : 'Login'
+    let text = Cookies.get('user-authentication-token') ? 'Logout' : 'Login'
     return (
       <section>
         <header>
@@ -71,6 +71,7 @@ class Layout extends React.Component {
               </div>
             </div>
           </nav>
+          <div className='page-title'></div>
         </header>
         <main id='page-wrapper'>
           <div className='container'>

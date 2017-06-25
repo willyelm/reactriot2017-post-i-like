@@ -17,6 +17,7 @@ class MyPostDetailsPage extends Component {
   componentDidMount() {
     $('#main_menu li').removeClass('active')
     $('#main_menu .my_posts').addClass('active')
+    $('.page-title').html('My posts')
   }
 
   _fetchData() {
@@ -38,9 +39,9 @@ class MyPostDetailsPage extends Component {
   }
 
   _postList() {
-    let listQuiz = 'Loading data ...'
-    if(this.state.posts) {
-      listQuiz = this.state.posts.map((v, k) => {
+    let listPosts = 'Loading data ...'
+    if(this.state.posts.length > 0) {
+      listPosts = this.state.posts.map((v, k) => {
         return (
           <div key={k}>
             <div className="post-preview">
@@ -58,18 +59,12 @@ class MyPostDetailsPage extends Component {
           </div>
         )
       })
-
-      return (
-        <div>
-          {listQuiz}
-        </div>
-      )
     } else {
-      listQuiz = (<div className='text-center'>No data available</div>)
+      listPosts = (<div className='text-center' style={{marginTop: '100px'}}>No data available</div>)
     }
     return (
       <div>
-        {listQuiz}
+        {listPosts}
       </div>
     )
   }

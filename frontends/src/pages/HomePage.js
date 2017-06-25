@@ -22,12 +22,12 @@ class HomePage extends Component {
         if (typeof res === 'undefined') {
           return
         } else {
-          if(res.body.posts === 'undefined'){
-            alert(res.body.errors)
-          }else{
-            this.setState({
-              posts: res.body.posts
-            })
+          if(res.body.posts === 'undefined') {
+          } else {
+            console.log(res.body);
+            // this.setState({
+            //   posts: res.body.posts
+            // })
           }
         }
       })
@@ -39,9 +39,9 @@ class HomePage extends Component {
   }
 
   _postList() {
-    let listQuiz = 'Loading data ...'
-    if(this.state.posts) {
-      listQuiz = this.state.posts.map((v, k) => {
+    let listPosts = 'Loading data ...'
+    if(this.state.posts.length > 0) {
+      listPosts = this.state.posts.map((v, k) => {
         return (
           <div key={k}>
             <div className="post-preview">
@@ -62,18 +62,12 @@ class HomePage extends Component {
           </div>
         )
       })
-
-      return (
-        <div>
-          {listQuiz}
-        </div>
-      )
     } else {
-      listQuiz = (<div className='text-center'>No data available</div>)
+      listPosts = (<div className='text-center'>No data available</div>)
     }
     return (
       <div>
-        {listQuiz}
+        {listPosts}
       </div>
     )
   }

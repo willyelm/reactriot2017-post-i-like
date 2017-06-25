@@ -11,6 +11,7 @@ class AboutPage extends Component {
   componentDidMount() {
     $('#main_menu li').removeClass('active')
     $('#main_menu .about').addClass('active')
+    $('.page-title').html('About')
   }
 
   render() {

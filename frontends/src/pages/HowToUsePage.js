@@ -40,6 +40,7 @@ class HowToUsePage extends Component {
     this._showNavbarHidden()
     $('#main_menu li').removeClass('active')
     $('#main_menu .how_to_use').addClass('active')
+    $('.page-title').html('How to use')
   }
 
   render() {

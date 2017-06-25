@@ -17,6 +17,7 @@ class MyPostDetailsPage extends Component {
   componentDidMount() {
     $('#main_menu li').removeClass('active')
     $('#main_menu .my_posts').addClass('active')
+    $('.page-title').html('My posts')
   }
 
   _fetchData() {

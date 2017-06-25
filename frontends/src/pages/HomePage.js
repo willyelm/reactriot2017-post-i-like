@@ -35,6 +35,7 @@ class HomePage extends Component {
   componentDidMount() {
     $('#main_menu li').removeClass('active')
     $('#main_menu .home').addClass('active')
+    $('.page-title').html('See what others are reading')
   }
 
   _postList() {

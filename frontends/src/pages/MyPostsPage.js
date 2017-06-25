@@ -43,19 +43,24 @@ class MyPostDetailsPage extends Component {
     if(this.state.posts.length > 0) {
       listPosts = this.state.posts.map((v, k) => {
         return (
-          <div key={k}>
-            <div className="post-preview">
-              <a href={'#/my_posts/' + v.id }>
-                <h2 className="post-title">
-                  {v.title}
-                </h2>
-                <h3 className="post-subtitle">
-                  { 'From: ' + v.url }
-                </h3>
-              </a>
-              <p className="post-meta">Posted by <a href={undefined}>{v.author}</a> on {v.created_at}</p>
+          <div key={k} className='col-md-12 clearfix padding-0'>
+            <div className='col-md-10 padding-0'>
+              <div className="post-preview">
+                <a href={'#/my_posts/' + v.id }>
+                  <h2 className="post-title">
+                    {v.title}
+                  </h2>
+                  <h3 className="post-subtitle">
+                    { 'From: ' + v.url }
+                  </h3>
+                </a>
+                <p className="post-meta">Posted by <a href={undefined}>{v.author}</a> on {v.created_at}</p>
+              </div>
             </div>
-            <hr />
+            <div className='col-md-2 text-right padding-0'>
+              <a href={'#/my_posts/' + v.id } className='btn btn-success' style={{marginTop: '30px'}}>View</a>
+            </div>
+            <hr style={{width: '100%'}} />
           </div>
         )
       })

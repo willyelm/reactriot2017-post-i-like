@@ -29,9 +29,9 @@ class AboutPage extends Component {
               <h4>Orange (LGM-118A Peacekeeper)</h4>
               <p className="text-muted">Backend Developer</p>
               <ul className="list-inline social-buttons">
-                <li><a href="http://www.rubify.com/" target='_blank'><i className="fa fa-globe"></i></a>
+                <li><a href="http://www.rubify.com/" rel='noopener noreferrer' target='_blank'><i className="fa fa-globe"></i></a>
                 </li>
-                <li><a target="_blank" href="https://github.com/orangerubify"><i className="fa fa-github"></i></a>
+                <li><a target="_blank" rel='noopener noreferrer' href="https://github.com/orangerubify"><i className="fa fa-github"></i></a>
                 </li>
                 <li><a href="mailto:orange@rubify.com"><i className="fa fa-envelope-o"></i></a>
                 </li>
@@ -44,9 +44,9 @@ class AboutPage extends Component {
                 <h4>Tim (LGM-30)</h4>
                 <p className="text-muted">Server Manager</p>
                 <ul className="list-inline social-buttons">
-                  <li><a href="http://www.rubify.com/" target='_blank'><i className="fa fa-globe"></i></a>
+                  <li><a href="http://www.rubify.com/" rel='noopener noreferrer' target='_blank'><i className="fa fa-globe"></i></a>
                   </li>
-                  <li><a href="https://github.com/TimRubify" target="_blank"><i className="fa fa-github"></i></a>
+                  <li><a href="https://github.com/TimRubify" rel='noopener noreferrer' target="_blank"><i className="fa fa-github"></i></a>
                   </li>
                   <li><a href="mailto:tim@rubify.com"><i className="fa fa-envelope-o"></i></a>
                   </li>
@@ -59,9 +59,9 @@ class AboutPage extends Component {
                   <h4>Anthony (Iskander)</h4>
                   <p className="text-muted">Frontend Developer</p>
                   <ul className="list-inline social-buttons">
-                    <li><a href="http://www.rubify.com/" target='_blank'><i className="fa fa-globe"></i></a>
+                    <li><a href="http://www.rubify.com/" rel='noopener noreferrer' target='_blank'><i className="fa fa-globe"></i></a>
                     </li>
-                    <li><a href="https://github.com/AnthonyLai1001" target="_blank"><i className="fa fa-github"></i></a>
+                    <li><a href="https://github.com/AnthonyLai1001" rel='noopener noreferrer' target="_blank"><i className="fa fa-github"></i></a>
                     </li>
                     <li><a href="mailto:anthony@rubify.com"><i className="fa fa-envelope-o"></i></a>
                     </li>

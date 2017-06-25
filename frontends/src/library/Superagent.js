@@ -1,11 +1,11 @@
-let config = {}
+window.config = {}
 
 if(process.env.NODE_ENV === 'development') {
-  config = {
+  window.config = {
     apiHost: 'http://localhost:3000'
   }
 } else {
-  config = {
+  window.config = {
     apiHost: 'https://post-i-like.2017.reactriot.com'
   }
 }
@@ -15,7 +15,7 @@ let Cookies = require('js-cookie');
 let superagent = require('superagent-defaults')();
 superagent.on('request', (request) => {
   if(request.url[0] === '/') {
-    request.url = config.apiHost + request.url;
+    request.url = window.config.apiHost + request.url;
   }//end if
 
   let authenticationToken = Cookies.get('user-authentication-token');

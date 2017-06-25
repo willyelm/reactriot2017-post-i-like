@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../styles/App.css';
-import HeaderNav from './HeaderNav.js'
+import HeaderNav from './HeaderNav.js';
 import superagent from '../library/Superagent';
 class HomePage extends Component {
 

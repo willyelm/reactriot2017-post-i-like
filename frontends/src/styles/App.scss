@@ -50,3 +50,28 @@ nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .na
   font-weight: 700;
   color: #000;
 }
+
+.button-drag {
+  display: block;
+  .fa-hand-o-right {
+    margin-left: 10px;
+  }
+  .btn-hover {
+    display: inline;
+    margin-left: 20px;
+  }
+  .nav-bar-hidden {
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: #c28a42;
+    color: #fff;
+    .fa-hand-o-up {
+      margin-right: 10px;
+      margin-left: 50px;
+    }
+  }
+}

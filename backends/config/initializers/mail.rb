@@ -5,8 +5,8 @@ if Rails.env != 'test'
       :address => "smtp.gmail.com",
       :port => 587,
       :domain => "gmail.com",
-      :user_name => "uraniumota@gmail.com",
-      :password => "thepa55w0rd",
+      :user_name => "uraniumota.team@gmail.com",
+      :password => "hoilamgi!@#",
       :authentication => "plain",
       :enable_starttls_auto => true
     }

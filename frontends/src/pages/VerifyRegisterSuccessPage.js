@@ -57,30 +57,42 @@ class VerifyRegisterSuccessPage extends Component {
     }
     else if (this.state.checkingToken) {
       return (
-        <div className='member-component clearfix'>
-          <div className='member-component-box'>
-            <div className='main-logo'><img src={imgLogo} alt="logo" height="79" width="79"/></div>
-            <div className='member-component-wrapper'>
-              <div className='form-group-custom sign-up-success-title text-center'>Verify Account</div>
-              <div className='form-group-custom sign-up-success-text-1 text-center' style={{color: 'red'}}>Invalid or expired token.</div>
-              <a className='btn btn-primary-custom btn-block form-group-custom' href='#/'>Back to Sign In</a>
+        <div className="container">
+          <div className='container-form'>
+            <div className='member-component col-md-8 col-md-offset-1 clearfix'>
+              <div className='member-component-box'>
+                <div className='member-component-wrapper'>
+                  <div className='form-group-custom sign-up-success-title text-left'>Verify Account</div>
+                  <div className='form-group-custom sign-up-success-text-1 text-left' style={{color: 'red'}}>Invalid or expired token.</div>
+                  <div className='button-margin col-md-6 padding-0'>
+                    <a className='btn btn-primary-custom btn-block btn-css' href='#/login'>Back to Sign In</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       );
     }
     else {
       return (
-        <div className='member-component clearfix'>
-          <div className='member-component-box'>
-            <div className='main-logo'><img src={imgLogo} alt="logo" height="79" width="79"/></div>
-            <div className='member-component-wrapper'>
-              <div className='form-group-custom sign-up-success-title text-center'>Great! Thank you for confirming your account!</div>
-              <div className='form-group-custom sign-up-success-text-1 text-center'>Now you may sign in into your account by accessing from the button below. Always remember to take your Vitamins daily!</div>
-              <a className='btn btn-primary-custom btn-block form-group-custom' href='#/'>Sign In</a>
+        <div className="container">
+          <div className='container-form'>
+            <div className='member-component col-md-8 col-md-offset-1 clearfix'>
+              <div className='member-component-box'>
+                <div className='member-component-wrapper'>
+                  <div className='form-group-custom sign-up-success-title text-left'>Great! Thank you for confirming your account!</div>
+                  <div className='form-group-custom sign-up-success-text-1 text-left'>Now you may sign in into your account by accessing from the button below.</div>
+                  <div className='button-margin col-md-6 padding-0'>
+                    <a className='btn btn-primary-custom btn-block btn-css' href='#/login'>Back to Sign In</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       );
     }
   }

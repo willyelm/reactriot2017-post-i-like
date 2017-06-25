@@ -19,7 +19,7 @@ class AboutPage extends Component {
         <div className="row">
           <div className="col-lg-12 text-center">
             <h2 className="section-heading">Uranium Team</h2>
-            <h3 className="section-subheading text-muted">Alwways beleive in yourself</h3>
+            <h3 className="section-subheading text-muted">Alwways beleive in yourself. And the power of rocket</h3>
           </div>
         </div>
         <div className="row">

@@ -4,6 +4,8 @@ require 'mina/git'
 require 'mina/rbenv'
 require 'mina/multistage'
 
+set :current_path, fetch(:deploy_to) + '/backends/current'
+set :releases_path, fetch(:deploy_to) + '/backends/releases'
 set :app_path, fetch(:current_path)
 set :repository, 'https://github.com/Hackbit/reactriot2017-post-i-like.git'
 
@@ -14,7 +16,8 @@ set :shared_files, [
   '.rbenv-vars'
 ]
 
-set :shared_dirs, fetch(:shared_dirs, []).push('log', 'public/system', 'tmp')
+set :shared_path, fetch(:deploy_to) + '/backends/shared'
+set :shared_dirs, fetch(:shared_dirs).push('log', 'public/system', 'tmp')
 set :stages, ['staging', 'production']
 set :default_stage, 'staging'
 
@@ -25,6 +28,17 @@ end
 task :setup => :environment do
 end
 
+desc "Move folder frontends to root of build folder"
+task :move_to_parent do
+  command %{
+    cd #{fetch(:deploy_to)}/tmp/
+    cd `ls -td -- */ | head -n 1`
+    mv backends/* ./
+    rm -rf backends
+    rm -rf frontends
+  }
+end
+
 desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
@@ -32,6 +46,7 @@ task :deploy => :environment do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
+    invoke :'move_to_parent'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
@@ -86,6 +101,7 @@ namespace :unicorn do
   set :unicorn_pid, "#{fetch(:app_path)}/tmp/pids/post_i_like.pid"
   set :start_unicorn, %{
     cd #{fetch(:app_path)}
+    mkdir -p ./tmp/pids
     bin/unicorn -c #{fetch(:app_path)}/config/unicorn.rb -E #{fetch(:rails_env)} -D
   }
 
@@ -99,7 +115,7 @@ namespace :unicorn do
   desc 'Stop unicorn'
   task :stop do
     unicorn_pid = fetch(:unicorn_pid)
-    command 'echo "-----> Stop Unicorn"'
+    command 'echo "-----> Stop Unicorn.."'
     command %{
       test -s "#{unicorn_pid}" && kill -QUIT `cat "#{unicorn_pid}"`
         echo "Stop Ok" && exit 0
@@ -110,7 +126,7 @@ namespace :unicorn do
   desc 'Restart unicorn using \'upgrade\''
   task :restart => :environment do
     unicorn_pid = fetch(:unicorn_pid)
-    command 'echo "-----> Stop Unicorn"'
+    command 'echo "-----> Stop Unicorn..."'
 
     command %{
       test -s "#{unicorn_pid}" && kill -s USR2 `cat "#{unicorn_pid}"` && \

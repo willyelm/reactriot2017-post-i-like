@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import superagent from '../library/Superagent';
+import $ from 'jquery';
 
 class MyPostDetailsPage extends Component {
   constructor(props) {
@@ -11,6 +12,11 @@ class MyPostDetailsPage extends Component {
 
   componentWillMount() {
     this._fetchData()
+  }
+
+  componentDidMount() {
+    $('#main_menu li').removeClass('active')
+    $('#main_menu .my_posts').addClass('active')
   }
 
   _fetchData() {
@@ -46,7 +52,7 @@ class MyPostDetailsPage extends Component {
                   { 'From: ' + v.url }
                 </h3>
               </a>
-              <p className="post-meta">Posted by <a href="#">{v.author}</a> on {v.created_at}</p>
+              <p className="post-meta">Posted by <a href={undefined}>{v.author}</a> on {v.created_at}</p>
             </div>
             <hr />
           </div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import superagent from '../library/Superagent';
 import '../styles/Login.css';
-let imgLogo = require('../images/logo.jpg');
 
 class ForgotPasswordPage extends Component {
   constructor(props) {
@@ -32,10 +31,10 @@ class ForgotPasswordPage extends Component {
         email: this.state.email
       })
       .end((err, res) => {
-        if (typeof res == 'undefined') {
+        if (typeof res === 'undefined') {
           return;
         }
-        if(res.body.result == 'ok') {
+        if(res.body.result === 'ok') {
           this.setState({sendMail: false});
         } else {
           this.setState({
@@ -47,7 +46,7 @@ class ForgotPasswordPage extends Component {
   }
 
   shouldDisableSignInButton() {
-    return this.state.signInButtonLabel == 'Sending...';
+    return this.state.signInButtonLabel === 'Sending...';
   }
 
   handleEmailChange(event) {

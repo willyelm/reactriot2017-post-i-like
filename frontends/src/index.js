@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './styles/clean-blog.min.css';
 import './styles/App.css';
@@ -18,6 +17,8 @@ import HowToUsePage from './pages/HowToUsePage';
 import VerifyRegisterSuccessPage from './pages/VerifyRegisterSuccessPage';
 import MyPostsPage from './pages/MyPostsPage';
 import MyPostDetailsPage from './pages/MyPostDetailsPage';
+import AboutPage from './pages/AboutPage';
+import SettingsPage from './pages/SettingsPage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -35,6 +36,8 @@ ReactDOM.render((
       <Route path='/how_to_use' component={HowToUsePage} />
       <Route path='/my_posts' component={MyPostsPage} />
       <Route path='/my_posts/:post_id' component={MyPostDetailsPage} />
+      <Route path='/about' component={AboutPage} />
+      <Route path='/settings' component={SettingsPage} />
     </Route>
   </Router>
 ), document.getElementById('root'));

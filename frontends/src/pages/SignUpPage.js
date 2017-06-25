@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import '../styles/Login.css';
 import superagent from '../library/Superagent';
 
-let imgLogo = require('../images/logo.jpg');
-
 class SignUpPage extends Component {
 
   constructor(props) {
@@ -51,10 +49,10 @@ class SignUpPage extends Component {
         user_role_name: 'Student'
       })
       .end((err, res) => {
-        if (typeof res == 'undefined' || typeof res.body == 'undefined') {
+        if (typeof res === 'undefined' || typeof res.body === 'undefined') {
           return;
         }
-        if(res.body.result == 'ok') {
+        if(res.body.result === 'ok') {
           window.location = '#/registration_completed';
         } else {
           this.setState({
@@ -90,7 +88,7 @@ class SignUpPage extends Component {
   }
 
   shouldDisableButton() {
-    return this.state.buttonLabel == 'Signing In...';
+    return this.state.buttonLabel === 'Signing In...';
   }
 
   render() {
@@ -106,9 +104,7 @@ class SignUpPage extends Component {
                   <div
                     className='error-placeholder'
                     style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}
-                    dangerouslySetInnerHTML={{__html: this.state.errorMessages}}>
-
-                  </div>
+                    dangerouslySetInnerHTML={{__html: this.state.errorMessages}} />
                   <div className='input-group-custom form-group'>
                     <label>First Name</label>
                     <input

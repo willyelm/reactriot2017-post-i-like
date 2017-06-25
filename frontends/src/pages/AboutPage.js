@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../styles/Login.css';
+import '../styles/App.css';
 
-class RegistrationCompletedPage extends Component {
+class AboutPage extends Component {
 
   render() {
     return (
@@ -27,4 +27,4 @@ class RegistrationCompletedPage extends Component {
   }
 }
 
-export default RegistrationCompletedPage;
+export default AboutPage;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../styles/App.css';
-import HeaderNav from './HeaderNav.js';
 import superagent from '../library/Superagent';
+import $ from 'jquery';
 class HomePage extends Component {
 
   constructor(props) {
@@ -34,6 +33,11 @@ class HomePage extends Component {
       })
   }
 
+  componentDidMount() {
+    $('#main_menu li').removeClass('active')
+    $('#main_menu .home').addClass('active')
+  }
+
   _postList() {
     let listQuiz = 'Loading data ...'
     if(this.state.posts) {
@@ -49,7 +53,10 @@ class HomePage extends Component {
                   { 'From: ' + v.url }
                 </h3>
               </a>
-              <p className="post-meta">Posted by <a href="#">{v.author}</a> on {v.created_at}</p>
+              <p className="post-meta">Posted by <a href={undefined}>{v.author}</a> on {v.created_at}
+              <br/>
+              Category: {v.category_name}
+              </p>
             </div>
             <hr />
           </div>

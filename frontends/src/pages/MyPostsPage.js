@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import superagent from '../library/Superagent';
+import $ from 'jquery';
 
 class MyPostDetailsPage extends Component {
   constructor(props) {
@@ -11,6 +12,11 @@ class MyPostDetailsPage extends Component {
 
   componentWillMount() {
     this._fetchData()
+  }
+
+  componentDidMount() {
+    $('#main_menu li').removeClass('active')
+    $('#main_menu .my_posts').addClass('active')
   }
 
   _fetchData() {

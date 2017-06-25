@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import '../styles/App.css';
 import HeaderNav from './HeaderNav.js';
 import superagent from '../library/Superagent';
+import $ from 'jquery';
 class HomePage extends Component {
 
   constructor(props) {
@@ -32,6 +33,11 @@ class HomePage extends Component {
           }
         }
       })
+  }
+
+  componentDidMount() {
+    $('#main_menu li').removeClass('active')
+    $('#main_menu .home').addClass('active')
   }
 
   _postList() {

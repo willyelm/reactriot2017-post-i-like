@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import superagent from '../library/Superagent';
+import $ from 'jquery';
 
 class HowToUsePage extends Component {
   constructor(props) {
@@ -25,6 +26,11 @@ class HowToUsePage extends Component {
           })
         }
       })
+  }
+
+  componentDidMount() {
+    $('#main_menu li').removeClass('active')
+    $('#main_menu .how_to_use').addClass('active')
   }
 
   render() {

@@ -79,6 +79,13 @@ h2.post-title {
   background-color: #C82647;
   border-radius: 4px; }
 
+.btn-view {
+  line-height: 1;
+  font-size: 18px;
+  color: #fff;
+  background-color: #59A96A;
+  border-radius: 4px; }
+
 .container-how-to-use {
   margin-top: 50px; }
   .container-how-to-use .button-drag {

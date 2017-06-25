@@ -6,7 +6,8 @@
   padding: 0 !important; }
 
 .search-form-modified {
-  position: relative; }
+  position: relative;
+  display: none !important; }
   .search-form-modified .btn-search {
     position: absolute;
     right: 0;
@@ -15,7 +16,8 @@
     border: none;
     box-shadow: none; }
     .search-form-modified .btn-search .fa {
-      font-size: 17px; }
+      font-size: 17px;
+      color: #000; }
   .search-form-modified .input-search {
     padding-right: 30px;
     width: 285px; }
@@ -60,3 +62,9 @@ nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .na
 
 h2.post-title {
   text-transform: none; }
+
+h3.post-subtitle {
+  text-transform: none; }
+
+a {
+  cursor: pointer; }

@@ -11,4 +11,11 @@ class User < ApplicationRecord
   end
 
   def send_confirmation_instructions; end
+
+  def as_json(_opts = {})
+    {
+      id: id,
+      sign_in_count: sign_in_count
+    }
+  end
 end

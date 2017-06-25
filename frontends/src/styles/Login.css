@@ -69,33 +69,17 @@ img.logo {
 .link-to-sign-up {
   margin-bottom: 50px; }
 
-.sign-in-page .header {
-  font-size: 28px;
-  font-weight: bold; }
+.sign-in-page {
+  color: #fffebf; }
+  .sign-in-page .header {
+    font-size: 28px;
+    font-weight: bold; }
 
 .button-margin {
   margin-top: 20px; }
 
 img.logo {
   border-radius: 50%; }
-
-.container-form {
-  margin-top: 150px; }
-  .container-form form {
-    font-size: 18px; }
-    .container-form form .form-group .form-control {
-      height: 50px;
-      width: 65%;
-      font-size: 18px;
-      color: #333; }
-    .container-form form .checkbox a {
-      color: #f3f3f3;
-      text-decoration: none; }
-    .container-form form .btn-css {
-      font-size: 18px;
-      color: #333;
-      width: 65%;
-      background-color: #c28a42; }
 
 .img-circle {
   width: 250px; }

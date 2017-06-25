@@ -28,6 +28,11 @@ img.logo {
   font-size: 18px;
   color: #f3f3f3;
   background-color: #c28a42;
+  border-radius: 4px;
+}
+
+.color-label {
+  color: #fffebf;
 }
 
 .container-form {
@@ -49,10 +54,6 @@ img.logo {
     .sign-up {
       margin-top: 15px;
     }
-
-    a {
-      color: #fff;
-    }
   }
 }
 
@@ -62,9 +63,6 @@ img.logo {
   .header {
     font-size: 28px;
     font-weight: bold;
-  }
-  a {
-    color: #fff;
   }
   .forgot-password {
     margin-bottom: 15px;
@@ -81,13 +79,19 @@ img.logo {
   }
 }
 
-.member-component-box {
-  font-size: 18px;
-}
-
 .sign-up-success-title {
   font-size: 22px;
-  color: #f3f3f3;
+  color: #fffebf;
+}
+
+.sign-up-success-text {
+  font-size: 20px;
+  color: #fffebf;
+}
+
+.sign-up-success-text-1 {
+  font-size: 18px;
+  color: #fffebf;
 }
 
 .link-to-sign-up {
@@ -99,4 +103,8 @@ img.logo {
     font-size: 28px;
     font-weight: bold;
   }
+}
+
+.button-margin {
+  margin-top: 20px;
 }

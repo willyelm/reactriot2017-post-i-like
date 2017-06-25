@@ -150,7 +150,7 @@ class SignUpPage extends Component {
                       onChange={(event) => this.handleRePasswordChange(event)}/>
                   </div>
                   <div className='text-right forgot-password'>
-                    <a className='forgot-your-password input-group-custom' href='#/forgot_password'>Forgot your password?</a>
+                    <a className='forgot-your-password input-group-custom color-label' href='#/forgot_password'>Forgot your password?</a>
                   </div>
                   <div className='input-group-custom form-group'>
                     <button
@@ -165,7 +165,7 @@ class SignUpPage extends Component {
                 <hr/>
 
                 <div className='input-group-custom link-to-sign-up text-right'>
-                  Already have an account? <br/><a href='#/login'>Sign in here.</a>
+                  Already have an account? <br/><a href='#/login' className='color-label'>Sign in here.</a>
                 </div>
               </div>
             </div>

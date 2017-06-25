@@ -18,7 +18,7 @@ img.logo {
   margin-bottom: 5px; }
 
 .btn-css {
-  height: 50px;
+  line-height: 1;
   font-size: 18px;
   color: #f3f3f3;
   background-color: #c28a42;
@@ -69,9 +69,11 @@ img.logo {
 .link-to-sign-up {
   margin-bottom: 50px; }
 
-.sign-in-page .header {
-  font-size: 28px;
-  font-weight: bold; }
+.sign-in-page {
+  color: #fffebf; }
+  .sign-in-page .header {
+    font-size: 28px;
+    font-weight: bold; }
 
 .button-margin {
   margin-top: 20px; }

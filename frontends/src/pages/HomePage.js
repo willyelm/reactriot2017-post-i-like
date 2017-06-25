@@ -49,7 +49,10 @@ class HomePage extends Component {
                   { 'From: ' + v.url }
                 </h3>
               </a>
-              <p className="post-meta">Posted by <a href="#">{v.author}</a> on {v.created_at}</p>
+              <p className="post-meta">Posted by <a href="#">{v.author}</a> on {v.created_at}
+              <br/>
+              Category: {v.category_name}
+              </p>
             </div>
             <hr />
           </div>

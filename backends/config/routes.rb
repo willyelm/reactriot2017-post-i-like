@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
 
     resources :my_posts, except: %I[new create edit]
+    resources :categories
 
     # User
     post '/login', controller: 'users', action: 'create'

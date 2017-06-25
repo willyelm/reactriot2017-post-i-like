@@ -39,7 +39,7 @@ class Layout extends React.Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                 </button>
-                <a className="navbar-brand" href="#/home">PostILike</a>
+                <a className="navbar-brand" href="#/home">Post.I.Like</a>
               </div>
               <div className="collapse navbar-collapse" id="main_menu">
                 <ul className="nav navbar-nav">

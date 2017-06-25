@@ -6,7 +6,7 @@ module Api
       if posts.length.positive?
         render json: {
           result: :ok,
-          posts: posts
+          posts: posts.as_json
         }
       else
         render json: {
@@ -21,17 +21,18 @@ module Api
       puts Readability::Document.new(source).content
     end
 
-  def show
-    post = Post.find(params[:id])
-    if post.present?
-      render json: {
-        result: :ok,
-        post: post.as_json
-      }
-    else
-      render json: {
-        errors: 'No data available'
-      }, status: 422
+    def show
+      post = Post.find(params[:id])
+      if post.present?
+        render json: {
+          result: :ok,
+          post: post.as_json
+        }
+      else
+        render json: {
+          errors: 'No data available'
+        }, status: 422
+      end
     end
 
     def create_post_url

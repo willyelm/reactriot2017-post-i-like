@@ -18,7 +18,7 @@ img.logo {
   margin-bottom: 5px; }
 
 .btn-css {
-  height: 50px;
+  line-height: 1;
   font-size: 18px;
   color: #f3f3f3;
   background-color: #c28a42;
@@ -92,7 +92,6 @@ img.logo {
       color: #f3f3f3;
       text-decoration: none; }
     .container-form form .btn-css {
-      height: 50px;
       font-size: 18px;
       color: #333;
       width: 65%;

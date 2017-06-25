@@ -57,3 +57,6 @@ nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .na
     .button-drag .nav-bar-hidden .fa-hand-o-up {
       margin-right: 10px;
       margin-left: 50px; }
+
+h2.post-title {
+  text-transform: none; }

@@ -69,15 +69,13 @@ task :deploy => :environment do
     comment %{`ls`}
     invoke :'deploy:link_shared_paths'
     comment %{`pwd`}
-    comment %{`ls`}
-    command %{gem install bundler}
     invoke :'bundle:install'
-    comment %{`pwd`}
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
+      comment %{`ls /home/app/www/post_i_like/backends/current/bin`}
       invoke :'sidekiq:restart'
       invoke :'unicorn:restart'
     end

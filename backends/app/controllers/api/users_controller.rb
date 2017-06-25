@@ -1,6 +1,6 @@
 module Api
   # API
-  class UsersController < BaseController
+  class UsersController < PublicController
     def create
       if authentication_user.success?
         render json: {

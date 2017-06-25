@@ -4,7 +4,7 @@ development:
   email_sender: 'noreply@rubify.com'
   max_users_per_account: 5
   domain: "localhost:3000"
-  front_domain: "localhost:8000"
+  front_domain: "localhost:3001"
 
 test:
   protocol: 'http'

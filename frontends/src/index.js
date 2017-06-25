@@ -15,6 +15,8 @@ import SignUpPage from './pages/SignUpPage';
 import RegistrationCompletedPage from './pages/RegistrationCompletedPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HowToUsePage from './pages/HowToUsePage';
+import VerifyRegisterSuccessPage from './pages/VerifyRegisterSuccessPage';
+import MyPostsPage from './pages/MyPostsPage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -24,11 +26,13 @@ ReactDOM.render((
       <Route path="/sign_up" component={SignUpPage} />
       <Route path='/registration_completed' component={RegistrationCompletedPage} />
       <Route path='/forgot_password' component={ForgotPasswordPage} />
+      <Route path='/verify_register_success/:register_token' component={VerifyRegisterSuccessPage} />
     </Route>
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
       <Route path='/post_detail/:post_id' component={PostDetail} />
       <Route path='/how_to_use' component={HowToUsePage} />
+      <Route path='/my_posts' component={MyPostsPage} />
     </Route>
   </Router>
 ), document.getElementById('root'));

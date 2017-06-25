@@ -31,7 +31,7 @@ class VerifyRegisterSuccessPage extends Component {
         register_token: this.props.params.register_token
       })
       .end((err, res) => {
-        if (typeof res == 'undefined') {
+        if (typeof res === 'undefined') {
           return;
         }
         if(res.body.result === 'ok') {

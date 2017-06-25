@@ -27,7 +27,7 @@ superagent.on('request', (request) => {
 const end = superagent.request.Request.prototype.end;
 superagent.request.Request.prototype.end = function(callback) {
   return end.call(this, (error, response) => {
-    if(response && response.statusCode == 401) {
+    if(response && response.statusCode === 401) {
       Cookies.remove('user-authentication-token');
       document.location = '#/login';
     } else {

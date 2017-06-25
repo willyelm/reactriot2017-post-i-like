@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import logo from '../logo.svg';
 import '../styles/sweetalert2.css';
 import '../styles/App.css';
 import swal from 'sweetalert2';
-import JSON from 'JSON2';
 import superagent from '../library/Superagent';
 class MyPostDetailsPage extends Component {
 
@@ -59,7 +57,7 @@ class MyPostDetailsPage extends Component {
           <h3 className="post-subtitle">
             { 'From: ' + this.state.post.url }
           </h3>
-          <p className="post-meta">Posted by <a href="#">{this.state.post.author}</a> on {this.state.post.created_at}
+          <p className="post-meta">Posted by <a href={"#/users/:user_id"}>{this.state.post.author}</a> on {this.state.post.created_at}
           <br/>
           Category: {this.state.post.category_name}
           </p>

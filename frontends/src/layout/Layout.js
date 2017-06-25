@@ -1,6 +1,6 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
 import $ from 'jquery';
+let Cookies = require('js-cookie');
 'use strict';
 require('normalize.css/normalize.css');
 require('../styles/App.css');
@@ -8,6 +8,15 @@ require('../styles/App.css');
 class Layout extends React.Component {
   componentDidMount() {
     $('body').removeClass('login')
+  }
+
+  _logout(event) {
+    event.preventDefault()
+    console.log(1000);
+
+    Cookies.remove('user-authentication-token', { path: '' })
+    console.log(Cookies.get('user-authentication-token'));
+    // window.location = '#/login'
   }
 
   render() {
@@ -37,16 +46,16 @@ class Layout extends React.Component {
                     <a href="#/how_to_use"><i className="fa fa-lightbulb-o" aria-hidden="true"></i> How to use</a>
                   </li>
                   <li className='about'>
-                    <a href="#"><i className="fa fa-info-circle" aria-hidden="true"></i> About</a>
+                    <a href="#/about"><i className="fa fa-info-circle" aria-hidden="true"></i> About</a>
                   </li>
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
                   <li className="dropdown">
                     <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i className="fa fa-user-circle-o" aria-hidden="true"></i> Account <span className="caret"></span></a>
                     <ul className="dropdown-menu">
-                      <li><a href="#"><i className="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
+                      <li><a href="#/settings"><i className="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
                       <li role="separator" className="divider"></li>
-                      <li><a href="#"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                      <li><a href="#" onClick={(event) => this._logout(event)}><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                     </ul>
                   </li>
                 </ul>

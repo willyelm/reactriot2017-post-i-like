@@ -1,6 +1,5 @@
 import React from 'react';
 import $ from 'jquery';
-'use strict';
 require('../styles/Login.css');
 
 class LoginLayout extends React.Component {

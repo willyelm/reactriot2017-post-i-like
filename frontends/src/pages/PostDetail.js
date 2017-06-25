@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../styles/App.css';
 import superagent from '../library/Superagent';
 class PostDetail extends Component {

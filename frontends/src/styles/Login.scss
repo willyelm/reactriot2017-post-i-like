@@ -18,6 +18,18 @@ img.logo {
   border-radius: 50%;
 }
 
+.error-placeholder {
+  color: #ff531e;
+  margin-bottom: 5px;
+}
+
+.btn-css {
+  height: 50px;
+  font-size: 18px;
+  color: #f3f3f3;
+  background-color: #c28a42;
+}
+
 .container-form {
   margin-top: 150px;
   form {
@@ -28,12 +40,6 @@ img.logo {
         font-size: 18px;
         color: #333;
       }
-    }
-    .btn-css {
-      height: 50px;
-      font-size: 18px;
-      color: #333;
-      background-color: #c28a42;
     }
 
     .forgot-password {
@@ -47,5 +53,50 @@ img.logo {
     a {
       color: #fff;
     }
+  }
+}
+
+.container-form-sign-up {
+  margin-top: 50px;
+  font-size: 18px;
+  .header {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  a {
+    color: #fff;
+  }
+  .forgot-password {
+    margin-bottom: 15px;
+  }
+}
+
+.form-group-custom {
+  .form-group {
+    .form-control {
+      height: 50px;
+      font-size: 18px;
+      color: #333;
+    }
+  }
+}
+
+.member-component-box {
+  font-size: 18px;
+}
+
+.sign-up-success-title {
+  font-size: 22px;
+  color: #f3f3f3;
+}
+
+.link-to-sign-up {
+  margin-bottom: 50px;
+}
+
+.sign-in-page {
+  .header {
+    font-size: 28px;
+    font-weight: bold;
   }
 }

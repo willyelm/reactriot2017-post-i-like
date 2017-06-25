@@ -12,7 +12,8 @@
     "react-dom": "^15.5.4",
     "react-router": "^2.8.1",
     "superagent": "^2.3.0",
-    "superagent-defaults": "^0.1.14"
+    "superagent-defaults": "^0.1.14",
+    "sweetalert2": "^6.6.5"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.3",

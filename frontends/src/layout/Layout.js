@@ -65,9 +65,7 @@ class Layout extends React.Component {
         </header>
         <main id='page-wrapper'>
           <div className='container'>
-            <div className='col-md-8'>
-              { this.getChildInput(this.props.children) }
-            </div>
+            { this.getChildInput(this.props.children) }
           </div>
         </main>
       </section>

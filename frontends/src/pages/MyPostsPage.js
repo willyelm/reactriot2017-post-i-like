@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import superagent from '../library/Superagent';
 
-class MyPostsPage extends Component {
+class MyPostDetailsPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -77,4 +77,4 @@ class MyPostsPage extends Component {
   }
 }
 
-export default MyPostsPage;
+export default MyPostDetailsPage;

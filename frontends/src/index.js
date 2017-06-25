@@ -17,6 +17,7 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import HowToUsePage from './pages/HowToUsePage';
 import VerifyRegisterSuccessPage from './pages/VerifyRegisterSuccessPage';
 import MyPostsPage from './pages/MyPostsPage';
+import MyPostDetailsPage from './pages/MyPostDetailsPage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -33,6 +34,7 @@ ReactDOM.render((
       <Route path='/post_detail/:post_id' component={PostDetail} />
       <Route path='/how_to_use' component={HowToUsePage} />
       <Route path='/my_posts' component={MyPostsPage} />
+      <Route path='/my_posts/:post_id' component={MyPostDetailsPage} />
     </Route>
   </Router>
 ), document.getElementById('root'));

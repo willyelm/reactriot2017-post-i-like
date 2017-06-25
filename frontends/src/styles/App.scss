@@ -9,6 +9,7 @@
 
 .search-form-modified {
   position: relative;
+  display: none !important;
 
   .btn-search {
     position: absolute;
@@ -20,6 +21,7 @@
 
     .fa {
       font-size: 17px;
+      color: #000;
     }
   }
 
@@ -113,4 +115,11 @@ h2.post-title {
       margin-left: 15px;
     }
   }
+
+h3.post-subtitle {
+  text-transform: none;
+}
+
+a {
+  cursor: pointer;
 }

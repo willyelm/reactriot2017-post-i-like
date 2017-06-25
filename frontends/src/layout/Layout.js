@@ -27,6 +27,7 @@ class Layout extends React.Component {
   }
 
   render() {
+    let text =  Cookies.get('user-authentication-token') ? 'Logout' : 'Login'
     return (
       <section>
         <header>
@@ -57,14 +58,7 @@ class Layout extends React.Component {
                   </li>
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
-                  <li className="dropdown">
-                    <a href={undefined} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i className="fa fa-user-circle-o" aria-hidden="true"></i> Account <span className="caret"></span></a>
-                    <ul className="dropdown-menu">
-                      <li><a href="#/settings"><i className="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
-                      <li role="separator" className="divider"></li>
-                      <li><a href={undefined} onClick={(event) => this._logout(event)}><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-                    </ul>
-                  </li>
+                  <li><a href={undefined} onClick={(event) => this._logout(event)}><i className="fa fa-sign-out" aria-hidden="true"></i> {text}</a></li>
                 </ul>
                 <form className="navbar-form navbar-right" onSubmit={(event) => this._seach(event)}>
                   <div className="form-group search-form-modified">

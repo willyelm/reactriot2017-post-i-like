@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import '../styles/agency.css';
 import $ from 'jquery';
 let orange = require('../images/team/orange.jpg');
 let tim = require('../images/team/tim.jpg');

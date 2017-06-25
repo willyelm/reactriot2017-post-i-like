@@ -6,6 +6,8 @@ body {
     background: url('../images/books_login.jpg') no-repeat;
     background-size: cover;
   }
+
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 header {
@@ -18,6 +20,7 @@ header {
     color: #FFFFFF;
     letter-spacing: 0;
     line-height: 300px;
+    text-align: center;
   }
 }
 
@@ -153,3 +156,60 @@ img.logo {
 .img-circle {
   width: 250px;
 }
+
+.team-member {
+  text-align: center;
+  margin-bottom: 50px; }
+  .team-member img {
+    margin: 0 auto;
+    border: 7px solid white; }
+  .team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none; }
+  .team-member p {
+    margin-top: 0; }
+
+ul.social-buttons {
+  margin-bottom: 0; }
+  ul.social-buttons li a {
+    display: block;
+    background-color: #222222;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    color: white;
+    outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s; }
+    ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active {
+      background-color: #fed136; }
+
+img::selection {
+  background: transparent; }
+
+img::-moz-selection {
+  background: transparent; }
+
+
+section h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px; }
+
+section h3.section-subheading {
+  font-size: 16px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 75px; }
+
+p.large {
+  font-size: 16px; }
+
+.text-muted {
+  color: #777777; }

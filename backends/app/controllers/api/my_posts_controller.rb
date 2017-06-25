@@ -46,7 +46,8 @@ module Api
     def post_params
       params.require(:post).permit(
         :title,
-        :category_id
+        :category_id,
+        :shared_type
       )
     end
   end

@@ -1,6 +1,6 @@
 .body {
   background: none;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif !important; }
 
 .padding-0 {
   padding: 0 !important; }
@@ -54,7 +54,7 @@ nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .na
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: #c28a42;
+    background-color: #d5274b;
     color: #fff; }
     .button-drag .nav-bar-hidden .fa-hand-o-up {
       margin-right: 10px;
@@ -62,6 +62,40 @@ nav.navbar.navbar-default .navbar-nav > .open > a, nav.navbar.navbar-default .na
 
 h2.post-title {
   text-transform: none; }
+
+.text-24 {
+  font-size: 24px; }
+
+.text-18 {
+  font-size: 18px; }
+
+.text-bold {
+  font-weight: bold; }
+
+.btn-kelly {
+  line-height: 1;
+  font-size: 18px;
+  color: #fff;
+  background-color: #C82647;
+  border-radius: 4px; }
+
+.btn-view {
+  line-height: 1;
+  font-size: 18px;
+  color: #fff;
+  background-color: #59A96A;
+  border-radius: 4px; }
+
+.container-how-to-use {
+  margin-top: 50px; }
+  .container-how-to-use .button-drag {
+    height: 80px;
+    line-height: 75px;
+    margin-left: 15px; }
+  .container-how-to-use .explain {
+    margin-top: 50px; }
+    .container-how-to-use .explain span {
+      margin-left: 15px; }
 
 h3.post-subtitle {
   text-transform: none; }

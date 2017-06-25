@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-import '../styles/agency.css';
 import $ from 'jquery';
 let orange = require('../images/team/orange.jpg');
 let tim = require('../images/team/tim.jpg');
@@ -11,6 +10,7 @@ class AboutPage extends Component {
   componentDidMount() {
     $('#main_menu li').removeClass('active')
     $('#main_menu .about').addClass('active')
+    $('.page-title').html('About')
   }
 
   render() {
@@ -19,7 +19,7 @@ class AboutPage extends Component {
         <div className="row">
           <div className="col-lg-12 text-center">
             <h2 className="section-heading">Uranium Team</h2>
-            <h3 className="section-subheading text-muted">Alwways beleive in yourself</h3>
+            <h3 className="section-subheading text-muted">Alwways beleive in yourself. And the power of rocket</h3>
           </div>
         </div>
         <div className="row">

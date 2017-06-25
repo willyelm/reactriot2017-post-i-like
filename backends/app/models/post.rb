@@ -14,7 +14,8 @@ class Post < ApplicationRecord
       url: url || category.user.full_name,
       created_at: created_at.strftime('%B %d, %Y'),
       updated_at: updated_at.strftime('%B %d, %Y'),
-      author: category.user.full_name
+      author: category.user.full_name,
+      shared_type: shared_type
     }
   end
 end

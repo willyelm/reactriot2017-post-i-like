@@ -17,6 +17,7 @@ class MyPostDetailsPage extends Component {
   componentDidMount() {
     $('#main_menu li').removeClass('active')
     $('#main_menu .my_posts').addClass('active')
+    $('.page-title').html('My posts')
   }
 
   _fetchData() {
@@ -38,38 +39,37 @@ class MyPostDetailsPage extends Component {
   }
 
   _postList() {
-    let listQuiz = 'Loading data ...'
-    if(this.state.posts) {
-      listQuiz = this.state.posts.map((v, k) => {
+    let listPosts = 'Loading data ...'
+    if(this.state.posts.length > 0) {
+      listPosts = this.state.posts.map((v, k) => {
         return (
-          <div key={k}>
-            <div className="post-preview">
-              <a href={'#/my_posts/' + v.id }>
-                <h2 className="post-title">
-                  {v.title}
-                </h2>
-                <h3 className="post-subtitle">
-                  { 'From: ' + v.url }
-                </h3>
-              </a>
-              <p className="post-meta">Posted by <a href={undefined}>{v.author}</a> on {v.created_at}</p>
+          <div key={k} className='col-md-12 clearfix padding-0'>
+            <div className='col-md-10 padding-0'>
+              <div className="post-preview">
+                <a href={'#/my_posts/' + v.id }>
+                  <h2 className="post-title">
+                    {v.title}
+                  </h2>
+                  <h3 className="post-subtitle">
+                    { 'From: ' + v.url }
+                  </h3>
+                </a>
+                <p className="post-meta">Posted by <a href={undefined}>{v.author}</a> on {v.created_at}</p>
+              </div>
             </div>
-            <hr />
+            <div className='col-md-2 text-right padding-0'>
+              <a href={'#/my_posts/' + v.id } className='btn btn-success' style={{marginTop: '30px'}}>View</a>
+            </div>
+            <hr style={{width: '100%'}} />
           </div>
         )
       })
-
-      return (
-        <div>
-          {listQuiz}
-        </div>
-      )
     } else {
-      listQuiz = (<div className='text-center'>No data available</div>)
+      listPosts = (<div className='text-center' style={{marginTop: '100px'}}>No data available</div>)
     }
     return (
       <div>
-        {listQuiz}
+        {listPosts}
       </div>
     )
   }

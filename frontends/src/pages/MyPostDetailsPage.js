@@ -13,7 +13,8 @@ class MyPostDetailsPage extends Component {
       categories: [],
       showNewCategoryForm: false,
       currentCategory: null,
-      showEditPostForm: false
+      showEditPostForm: false,
+      currentShareType: null
     }
   }
 
@@ -34,7 +35,8 @@ class MyPostDetailsPage extends Component {
             this.setState({
               post: res.body.post,
               categories: res.body.categories,
-              currentCategory: res.body.post.category_id
+              currentCategory: res.body.post.category_id,
+              currentShareType: res.body.post.shared_type
             })
           }
         }
@@ -183,6 +185,14 @@ class MyPostDetailsPage extends Component {
     })
   }
 
+  _changeShareType(event) {
+    let currentTarget = $(event.currentTarget)
+
+    this.setState({
+      currentShareType: currentTarget.val()
+    })
+  }
+
   _updatePost(event) {
     event.preventDefault()
 
@@ -191,7 +201,8 @@ class MyPostDetailsPage extends Component {
       .send({
         post: {
           title: $('#edit_post .post-title').val(),
-          category_id: $('#edit_post .post-category-id').val()
+          category_id: $('#edit_post .post-category-id').val(),
+          shared_type: $('#edit_post .post-shared-type').val()
         }
       })
       .end((err, res) => {
@@ -227,6 +238,12 @@ class MyPostDetailsPage extends Component {
             <div className='form-group'>
               <select className='form-control post-category-id' name='post[category_id]' value={this.state.currentCategory} onChange={(event) => this._changeCategory(event)}>
                 {listCategories}
+              </select>
+            </div>
+            <div className='form-group'>
+              <select className='form-control post-shared-type' name='post[shared_type]' value={this.state.currentShareType} onChange={(event) => this._changeShareType(event)}>
+                <option value='everyone'>Public</option>
+                <option value='only_me'>Private</option>
               </select>
             </div>
             <div className='text-right'>

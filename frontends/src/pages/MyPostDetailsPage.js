@@ -157,7 +157,7 @@ class MyPostDetailsPage extends Component {
               <input name='category[name]' type='text' className='form-control category_name' />
             </div>
             <div className='text-right'>
-              <a href='#' className='btn btn-warning' onClick={(event) => this._showNewCategoryForm(event, false)}>Close</a>
+              <a href={undefined} className='btn btn-warning' onClick={(event) => this._showNewCategoryForm(event, false)}>Close</a>
               <button className='btn btn-success' type='submit' onClick={(event) => this._newCategory(event)}>Save</button>
             </div>
           </form>
@@ -229,8 +229,8 @@ class MyPostDetailsPage extends Component {
               </select>
             </div>
             <div className='text-right'>
-              <a href='#' className='btn btn-primary' onClick={(event) => this._showNewCategoryForm(event, true)}>New category</a>
-              <a href='#' className='btn btn-warning' onClick={(event) => this._edit(event, false)}>Close</a>
+              <a href={undefined} className='btn btn-primary' onClick={(event) => this._showNewCategoryForm(event, true)}>New category</a>
+              <a href={undefined} className='btn btn-warning' onClick={(event) => this._edit(event, false)}>Close</a>
               <button className='btn btn-success' type='submit' onClick={(event) => this._updatePost(event)}>Save</button>
             </div>
           </form>
@@ -243,8 +243,8 @@ class MyPostDetailsPage extends Component {
     return (
       <section className='listting-posts'>
         <div className='btn-groups text-right' style={{marginTop: '30px'}}>
-          <a href='#' className='btn btn-primary' onClick={(event) => this._edit(event, true)}>Edit</a>
-          <a href='#' className='btn btn-danger' onClick={(event) => this._delete(event)}>Delete</a>
+          <a href={undefined} className='btn btn-primary' onClick={(event) => this._edit(event, true)}>Edit</a>
+          <a href={undefined} className='btn btn-danger' onClick={(event) => this._delete(event)}>Delete</a>
         </div>
         {this._newCategoryForm()}
         {this._editPostForm()}

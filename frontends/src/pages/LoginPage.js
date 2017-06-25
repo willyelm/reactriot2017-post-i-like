@@ -18,9 +18,9 @@ class LoginPage extends Component {
   }
 
   componentWillMount() {
-    // if(Cookies.get('user-authentication-token')) {
-    //   window.location = '#/home'
-    // }
+    if(Cookies.get('user-authentication-token')) {
+      window.location = '#/home'
+    }
   }
 
   componentDidMount() {

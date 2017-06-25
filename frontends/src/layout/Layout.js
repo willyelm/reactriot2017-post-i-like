@@ -7,15 +7,17 @@ require('../styles/App.css');
 class Layout extends React.Component {
   componentDidMount() {
     $('body').removeClass('login')
+
+    if(!Cookies.get('user-authentication-token')) {
+      window.location = '#/login'
+    }
   }
 
   _logout(event) {
     event.preventDefault()
-    console.log(1000);
 
     Cookies.remove('user-authentication-token', { path: '' })
-    console.log(Cookies.get('user-authentication-token'));
-    // window.location = '#/login'
+    window.location = '#/login'
   }
 
   render() {

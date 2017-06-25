@@ -4,7 +4,8 @@ require 'mina/git'
 require 'mina/rbenv'
 require 'mina/multistage'
 
-set :current_path, fetch(:current_path, ["/backends"])
+set :current_path, fetch(:deploy_to) + '/backends/current'
+set :releases_path, fetch(:deploy_to) + '/backends/releases'
 set :app_path, fetch(:current_path)
 set :repository, 'https://github.com/Hackbit/reactriot2017-post-i-like.git'
 
@@ -15,7 +16,7 @@ set :shared_files, [
   '.rbenv-vars'
 ]
 
-set :shared_path, fetch(:shared_path, ["/backends"])
+set :shared_path, fetch(:deploy_to) + '/backends/shared'
 set :shared_dirs, fetch(:shared_dirs).push('log', 'public/system', 'tmp')
 set :stages, ['staging', 'production']
 set :default_stage, 'staging'
@@ -27,55 +28,32 @@ end
 task :setup => :environment do
 end
 
-desc "Test."
-task :hutbin do
-  system "echo #{fetch(:shared_dirs)}"
-  system "echo #{fetch(:shared_path)}"
-  system "echo #{fetch(:linked_dir)}"
-  system "echo #{fetch(:linked_path)}"
-  system "ls"
-  system "pwd"
-end
-
-desc '[Custom] Links paths set in :shared_dirs and :shared_files.'
-task :link_shared_paths do
-  comment %{Symlinking shared paths}
-
-  fetch(:shared_dirs, []).each do |linked_dir|
-    command %{mkdir -p #{File.dirname("./#{linked_dir}")}}
-    command %{rm -rf "./#{linked_dir}"}
-    command %{ln -s "#{fetch(:shared_path)}/#{linked_dir}" "./#{linked_dir}"}
-  end
-
-  fetch(:shared_files, []).each do |linked_path|
-    command %{ln -sf "#{fetch(:shared_path)}/#{linked_path}" "./#{linked_path}"}
-  end
+desc "Move folder frontends to root of build folder"
+task :move_to_parent do
+  command %{
+    cd #{fetch(:deploy_to)}/tmp/
+    cd `ls -td -- */ | head -n 1`
+    mv backends/* ./
+    rm -rf backends
+    rm -rf frontends
+  }
 end
 
 desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
     fetch(:rails_env)
-    comment %{`pwd`}
-    comment %{`ls`}
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
-    comment %{`ls`}
-    # command %{cd #{fetch(:deploy_to)}}
-    # invoke :'hutbin'
-    command %{cd backends}
-    comment %{`pwd`}
-    comment %{`ls`}
+    invoke :'move_to_parent'
     invoke :'deploy:link_shared_paths'
-    comment %{`pwd`}
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
-      comment %{`ls /home/app/www/post_i_like/backends/current/bin`}
       invoke :'sidekiq:restart'
       invoke :'unicorn:restart'
     end
@@ -123,6 +101,7 @@ namespace :unicorn do
   set :unicorn_pid, "#{fetch(:app_path)}/tmp/pids/post_i_like.pid"
   set :start_unicorn, %{
     cd #{fetch(:app_path)}
+    mkdir -p ./tmp/pids
     bin/unicorn -c #{fetch(:app_path)}/config/unicorn.rb -E #{fetch(:rails_env)} -D
   }
 
@@ -136,7 +115,7 @@ namespace :unicorn do
   desc 'Stop unicorn'
   task :stop do
     unicorn_pid = fetch(:unicorn_pid)
-    command 'echo "-----> Stop Unicorn"'
+    command 'echo "-----> Stop Unicorn.."'
     command %{
       test -s "#{unicorn_pid}" && kill -QUIT `cat "#{unicorn_pid}"`
         echo "Stop Ok" && exit 0
@@ -147,7 +126,7 @@ namespace :unicorn do
   desc 'Restart unicorn using \'upgrade\''
   task :restart => :environment do
     unicorn_pid = fetch(:unicorn_pid)
-    command 'echo "-----> Stop Unicorn"'
+    command 'echo "-----> Stop Unicorn..."'
 
     command %{
       test -s "#{unicorn_pid}" && kill -s USR2 `cat "#{unicorn_pid}"` && \

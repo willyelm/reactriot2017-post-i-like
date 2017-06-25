@@ -25,7 +25,7 @@ img.logo {
   border-radius: 4px; }
 
 .color-label {
-  color: #fffebf; }
+  color: #fff; }
 
 .container-form {
   margin-top: 150px; }
@@ -42,7 +42,8 @@ img.logo {
 
 .container-form-sign-up {
   margin-top: 50px;
-  font-size: 18px; }
+  font-size: 18px;
+  color: #fff; }
   .container-form-sign-up .header {
     font-size: 28px;
     font-weight: bold; }
@@ -56,21 +57,21 @@ img.logo {
 
 .sign-up-success-title {
   font-size: 22px;
-  color: #fffebf; }
+  color: #fff; }
 
 .sign-up-success-text {
   font-size: 20px;
-  color: #fffebf; }
+  color: #fff; }
 
 .sign-up-success-text-1 {
   font-size: 18px;
-  color: #fffebf; }
+  color: #fff; }
 
 .link-to-sign-up {
   margin-bottom: 50px; }
 
 .sign-in-page {
-  color: #fffebf; }
+  color: #fff; }
   .sign-in-page .header {
     font-size: 28px;
     font-weight: bold; }

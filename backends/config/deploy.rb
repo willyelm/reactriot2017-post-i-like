@@ -37,6 +37,20 @@ task :hutbin do
   system "pwd"
 end
 
+desc '[Custom] Links paths set in :shared_dirs and :shared_files.'
+task :link_shared_paths do
+  comment %{Symlinking shared paths}
+
+  fetch(:shared_dirs, []).each do |linked_dir|
+    command %{mkdir -p #{File.dirname("./#{linked_dir}")}}
+    command %{rm -rf "./#{linked_dir}"}
+    command %{ln -s "#{fetch(:shared_path)}/#{linked_dir}" "./#{linked_dir}"}
+  end
+
+  fetch(:shared_files, []).each do |linked_path|
+    command %{ln -sf "#{fetch(:shared_path)}/#{linked_path}" "./#{linked_path}"}
+  end
+end
 
 desc "Deploys the current version to the server."
 task :deploy => :environment do
@@ -56,7 +70,9 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     comment %{`pwd`}
     comment %{`ls`}
+    command %{gem install bundler}
     invoke :'bundle:install'
+    comment %{`pwd`}
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'

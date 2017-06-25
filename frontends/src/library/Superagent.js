@@ -6,7 +6,7 @@ if(process.env.NODE_ENV === 'development') {
   }
 } else {
   window.config = {
-    apiHost: 'http://post-i-like.2017.reactriot.com:8080'
+    apiHost: 'http://post-i-like.2017.reactriot.com'
   }
 }
 

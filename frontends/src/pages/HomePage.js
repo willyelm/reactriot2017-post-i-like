@@ -17,7 +17,7 @@ class HomePage extends Component {
 
   _fetchData() {
     superagent
-      .get('/api/posts')
+      .get('/api/posts?search=' + this.props.params.search)
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return

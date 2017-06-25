@@ -22,7 +22,7 @@ import SettingsPage from './pages/SettingsPage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
-    <Redirect from='/' to='/login' />
+    <Redirect from='/' to='/home' />
     <Route component={LoginLayout}>
       <Route path="/login" component={LoginPage} />
       <Route path="/sign_up" component={SignUpPage} />
@@ -31,7 +31,7 @@ ReactDOM.render((
       <Route path='/verify_register_success/:register_token' component={VerifyRegisterSuccessPage} />
     </Route>
     <Route component={Layout}>
-      <Route path='/home' component={HomePage} />
+      <Route path='/home(/:search)' component={HomePage} />
       <Route path='/post_detail/:post_id' component={PostDetail} />
       <Route path='/how_to_use' component={HowToUsePage} />
       <Route path='/my_posts' component={MyPostsPage} />

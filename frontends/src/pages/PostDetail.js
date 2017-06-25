@@ -36,8 +36,18 @@ class PostDetail extends Component {
     let postDetail = 'Loading data ...'
     if(this.state.post) {
       postDetail =  (
-        <div>
-          <h3>{this.state.post.title}</h3>
+        <div className="post-preview">
+          <h2 className="post-title">
+            {this.state.post.title}
+          </h2>
+          <h3 className="post-subtitle">
+            { 'From: ' + this.state.post.url }
+          </h3>
+          <p className="post-meta">Posted by <a href={"#/users/:user_id"}>{this.state.post.author}</a> on {this.state.post.created_at}
+          <br/>
+          Category: {this.state.post.category_name}
+          </p>
+          <hr />
           <div dangerouslySetInnerHTML={{ __html: this.state.post.content }} />
         </div>
       )

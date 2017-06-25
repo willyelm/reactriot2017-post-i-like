@@ -3,7 +3,6 @@ import superagent from '../library/Superagent';
 import '../styles/Login.css';
 let Cookies = require('js-cookie');
 
-let imgLogo = require('../images/logo.jpg');
 class VerifyRegisterSuccessPage extends Component {
   constructor(props) {
     super(props)

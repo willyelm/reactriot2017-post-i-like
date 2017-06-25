@@ -8,9 +8,9 @@ class Layout extends React.Component {
   componentDidMount() {
     $('body').removeClass('login')
 
-    if(!Cookies.get('user-authentication-token')) {
-      window.location = '#/login'
-    }
+    // if(!Cookies.get('user-authentication-token')) {
+    //   window.location = '#/login'
+    // }
   }
 
   _logout(event) {
@@ -18,6 +18,12 @@ class Layout extends React.Component {
 
     Cookies.remove('user-authentication-token', { path: '' })
     window.location = '#/login'
+  }
+
+  _seach(event) {
+    event.preventDefault()
+
+    window.location = '#/home/' + $('input.input-search').val()
   }
 
   render() {
@@ -60,7 +66,7 @@ class Layout extends React.Component {
                     </ul>
                   </li>
                 </ul>
-                <form className="navbar-form navbar-right">
+                <form className="navbar-form navbar-right" onSubmit={(event) => this._seach(event)}>
                   <div className="form-group search-form-modified">
                     <input type="text" className="form-control input-search" placeholder="Search" />
                     <button type="submit" className="btn-search">

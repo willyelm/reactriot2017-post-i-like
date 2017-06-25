@@ -38,7 +38,7 @@ class Layout extends React.Component {
                     <a href="#/home"><i className="fa fa-home" aria-hidden="true"></i> Home <span className="sr-only">(current)</span></a>
                   </li>
                   <li><a href="#"><i className="fa fa-link" aria-hidden="true"></i> My posts</a></li>
-                  <li><a href="#"><i className="fa fa-lightbulb-o" aria-hidden="true"></i> How to use</a></li>
+                  <li><a href="#/how_to_use"><i className="fa fa-lightbulb-o" aria-hidden="true"></i> How to use</a></li>
                   <li><a href="#"><i className="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
                 </ul>
                 <ul className="nav navbar-nav navbar-right">

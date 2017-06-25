@@ -14,6 +14,7 @@ import PostDetail from './pages/PostDetail';
 import SignUpPage from './pages/SignUpPage';
 import RegistrationCompletedPage from './pages/RegistrationCompletedPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import HowToUsePage from './pages/HowToUsePage';
 
 ReactDOM.render((
   <Router history={hashHistory}>
@@ -27,6 +28,7 @@ ReactDOM.render((
     <Route component={Layout}>
       <Route path='/home' component={HomePage} />
       <Route path='/post_detail/:post_id' component={PostDetail} />
+      <Route path='/how_to_use' component={HowToUsePage} />
     </Route>
   </Router>
 ), document.getElementById('root'));

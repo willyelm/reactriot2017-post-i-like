@@ -1,6 +1,6 @@
 module Api
   # Sessions
-  class SessionsController < BaseController
+  class SessionsController < PublicController
     def forgot_password
       forgot_password = ForgotPassword.call(params[:email])
       if forgot_password.success?

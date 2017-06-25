@@ -7,7 +7,7 @@ class Post < ApplicationRecord
     :everyone
   ]
 
-  def as_json
+  def as_json(_opts = {})
     {
       id: id,
       title: title,

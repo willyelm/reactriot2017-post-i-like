@@ -44,9 +44,8 @@ class MyPostDetailsPage extends Component {
   }
 
   componentDidMount() {
-    if(this.state.post.id === 'undefined') {
-      window.location = '#/my_posts'
-    }
+    $('#main_menu li').removeClass('active')
+    $('#main_menu .my_posts').addClass('active')
   }
 
   _showPost() {

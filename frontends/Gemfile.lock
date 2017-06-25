@@ -1,0 +1,20 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    mina (1.0.6)
+      open4 (~> 1.3.4)
+      rake
+    mina-multistage (1.0.3)
+      mina (~> 1.0)
+    open4 (1.3.4)
+    rake (12.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mina (~> 1.0.3)
+  mina-multistage (~> 1.0.3)
+
+BUNDLED WITH
+   1.15.1

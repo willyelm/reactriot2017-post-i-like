@@ -44,7 +44,7 @@ class HowToUsePage extends Component {
   }
 
   render() {
-    let href = `javascript:void%20function(){_my_script=document.createElement(%22SCRIPT%22),_my_script.type=%22text/javascript%22,_my_script.src=%22${window.config.apiHost}/api/posts/create_post_url%3Ftoken=${this.state.token}%26url=%22+window.location.href,document.getElementsByTagName(%22head%22)[0].appendChild(_my_script),alert(%22This%20post%20is%20saved!%20You%20can%20visit%20link%20${window.config.apiHost}/%20for%20detail%22)}();`
+    let href = `javascript:void%20function(){_my_script=document.createElement(%22SCRIPT%22),_my_script.type=%22text/javascript%22,_my_script.src=%22${window.config.apiHost}/api/posts/create_post_url%3Ftoken=${this.state.token}%26url=%22+window.location.href,document.getElementsByTagName(%22head%22)[0].appendChild(_my_script),_protocol=window.location.protocol,alert(%22https:%22==_protocol%3F%22Sorry%20my%20application%20not%20support%20website%20HTTPS%20protocol(secure)%20in%20beta%20version,%20please%20get%20from%20another%20website%22:%22This%20post%20is%20saved!%20You%20can%20visit%20link%20http://post-i-like.projectwebby.com/%20for%20detail%22)}();`
 
     return (
       <div className="container" style={{marginBottom: '80px'}}>

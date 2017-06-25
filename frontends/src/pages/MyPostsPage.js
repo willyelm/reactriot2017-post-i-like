@@ -59,7 +59,7 @@ class MyPostDetailsPage extends Component {
         )
       })
     } else {
-      listPosts = (<div className='text-center'>No data available</div>)
+      listPosts = (<div className='text-center' style={{marginTop: '100px'}}>No data available</div>)
     }
     return (
       <div>

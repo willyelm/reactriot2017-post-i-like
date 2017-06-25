@@ -24,10 +24,9 @@ class HomePage extends Component {
         } else {
           if(res.body.posts === 'undefined') {
           } else {
-            console.log(res.body);
-            // this.setState({
-            //   posts: res.body.posts
-            // })
+            this.setState({
+              posts: res.body.posts
+            })
           }
         }
       })
@@ -63,7 +62,7 @@ class HomePage extends Component {
         )
       })
     } else {
-      listPosts = (<div className='text-center'>No data available</div>)
+      listPosts = (<div className='text-center' style={{marginTop: '100px'}}>No data available</div>)
     }
     return (
       <div>

@@ -1,24 +1,18 @@
 module Api
   # Posts
-  class PostsController < BaseController
+  class PostsController < PublicController
     def index
       posts = Post.where(shared_type: :everyone)
       if posts.length.positive?
         render json: {
           result: :ok,
-          posts: posts.as_json
+          posts: posts
         }
       else
         render json: {
           errors: 'No data available'
         }, status: 422
       end
-    end
-
-    def create
-      source = open(params['url']).read
-      puts Readability::Document.new(source).title
-      puts Readability::Document.new(source).content
     end
 
     def show
@@ -33,6 +27,12 @@ module Api
           errors: 'No data available'
         }, status: 422
       end
+    end
+
+    def create
+      source = open(params['url']).read
+      puts Readability::Document.new(source).title
+      puts Readability::Document.new(source).content
     end
 
     def create_post_url
@@ -51,6 +51,9 @@ module Api
           title = res.title
           content = res.content
           default_category = user.categories.find_by_name('General')
+          unless default_category.present?
+            default_category = user.categories.create(name: 'General')
+          end
           default_category.posts.create(
             title: title, content: content, url: url, shared_type: :everyone
           )

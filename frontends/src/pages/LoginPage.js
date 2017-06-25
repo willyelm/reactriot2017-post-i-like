@@ -100,7 +100,7 @@ class LoginPage extends Component {
                 onChange={(event) => this.handlePasswordChange(event)}/>
             </div>
             <div className='text-right forgot-password'>
-              <a className='forgot-your-password input-group-custom btn-block' href='#/forgot_password'>Forgot your password?</a>
+              <a className='forgot-your-password input-group-custom btn-block color-label' href='#/forgot_password'>Forgot your password?</a>
             </div>
             <button
               type='submit'
@@ -110,7 +110,7 @@ class LoginPage extends Component {
               {this.state.buttonLabel}
             </button>
             <div className='text-right sign-up'>
-              Don’t have an account? <a href='#/sign_up'>Sign up here.</a>
+              Don’t have an account? <a href='#/sign_up' className="color-label">Sign up here.</a>
             </div>
           </form>
         </div>

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../styles/App.css';
-import HeaderNav from './HeaderNav.js';
 import superagent from '../library/Superagent';
-class HomePage extends Component {
 
+class MyPostDetailsPage extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -18,7 +15,7 @@ class HomePage extends Component {
 
   _fetchData() {
     superagent
-      .get('/api/posts')
+      .get('/api/my_posts')
       .end((err, res) => {
         if (typeof res === 'undefined') {
           return
@@ -41,7 +38,7 @@ class HomePage extends Component {
         return (
           <div key={k}>
             <div className="post-preview">
-              <a href={'#/post_detail/' + v.id }>
+              <a href={'#/my_posts/' + v.id }>
                 <h2 className="post-title">
                   {v.title}
                 </h2>
@@ -80,4 +77,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default MyPostDetailsPage;

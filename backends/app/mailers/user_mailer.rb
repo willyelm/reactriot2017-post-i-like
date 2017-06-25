@@ -4,7 +4,7 @@ class UserMailer < ApplicationMailer
     @url = APP_CONFIG[:protocol] +
       '://' + APP_CONFIG[:front_domain] +
       '/#verify_register_success/' + token.to_s
-    mail(to: @user.email, subject: 'Vitamin Confirmation Email')
+    mail(to: @user.email, subject: 'I Like Post Confirmation Email')
   end
 
   def forgot_password(user_id, token)
@@ -12,6 +12,6 @@ class UserMailer < ApplicationMailer
     @url  = APP_CONFIG[:protocol] +
       '://' + APP_CONFIG[:front_domain] +
       '/#reset_password/' + token.to_s
-    mail(to: @user.email, subject: 'Reset your Vitamin password')
+    mail(to: @user.email, subject: 'Reset your I Like Post password')
   end
 end

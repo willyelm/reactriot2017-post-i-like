@@ -23,11 +23,8 @@ class PostDetail extends Component {
         if (typeof res === 'undefined') {
           return
         } else {
-          console.log(res.body)
-          if(res.body.post === 'undefined'){
-            alert(res.body.errors)
-          }else{
-            console.log(res.body.post)
+          if(res.body.post === 'undefined') {
+          } else {
             this.setState({
               post: res.body.post
             })
@@ -57,18 +54,9 @@ class PostDetail extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <section className='listting-posts col-md-12'>
-          { this._showPost() }
-        </section>
-      </div>
+      <section className='listting-posts col-md-12'>
+        { this._showPost() }
+      </section>
     );
   }
 }

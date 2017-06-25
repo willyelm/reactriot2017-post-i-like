@@ -21,7 +21,11 @@ img.logo {
   height: 50px;
   font-size: 18px;
   color: #f3f3f3;
-  background-color: #c28a42; }
+  background-color: #c28a42;
+  border-radius: 4px; }
+
+.color-label {
+  color: #fffebf; }
 
 .container-form {
   margin-top: 150px; }
@@ -35,8 +39,6 @@ img.logo {
       margin-bottom: 15px; }
     .container-form form .sign-up {
       margin-top: 15px; }
-    .container-form form a {
-      color: #fff; }
 
 .container-form-sign-up {
   margin-top: 50px;
@@ -44,8 +46,6 @@ img.logo {
   .container-form-sign-up .header {
     font-size: 28px;
     font-weight: bold; }
-  .container-form-sign-up a {
-    color: #fff; }
   .container-form-sign-up .forgot-password {
     margin-bottom: 15px; }
 
@@ -54,12 +54,17 @@ img.logo {
   font-size: 18px;
   color: #333; }
 
-.member-component-box {
-  font-size: 18px; }
-
 .sign-up-success-title {
   font-size: 22px;
-  color: #f3f3f3; }
+  color: #fffebf; }
+
+.sign-up-success-text {
+  font-size: 20px;
+  color: #fffebf; }
+
+.sign-up-success-text-1 {
+  font-size: 18px;
+  color: #fffebf; }
 
 .link-to-sign-up {
   margin-bottom: 50px; }
@@ -67,3 +72,6 @@ img.logo {
 .sign-in-page .header {
   font-size: 28px;
   font-weight: bold; }
+
+.button-margin {
+  margin-top: 20px; }

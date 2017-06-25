@@ -62,19 +62,19 @@ class ForgotPasswordPage extends Component {
       return (
         <div className="container">
           <div className="container-form">
-            <div className='member-component forgot-page col-md-8 col-md-offset-2 clearfix'>
+            <div className='member-component forgot-page col-md-5 col-md-offset-1 clearfix'>
               <div className='member-component-box'>
                 <div className='member-component-wrapper'>
-                  <div className='form-group-custom sign-up-success-title text-center'>Forgot Your Password</div>
-                  <div className='form-group-custom sign-up-success-title sign-up-success-text-1 text-center'>In order to receive your access code by email, please enter the address you provide during the sign up process.</div>
+                  <div className='form-group-custom sign-up-success-title text-left'>Forgot Your Password</div>
+                  <div className='form-group-custom sign-up-success-title sign-up-success-text-1 text-left'>In order to receive your access code by email, please enter the address you provide during the sign up process.</div>
                   <hr/>
                   <div className='form-group-custom'>
                     <div
-                      className='error-placeholder col-md-10 col-md-offset-1'
+                      className='error-placeholder'
                       style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}>
                       { this.state.errorMessages }
                     </div>
-                    <div className='input-group-custom form-group col-md-10 col-md-offset-1'>
+                    <div className='input-group-custom form-group '>
                       <input
                         className="form-control"
                         type='text'
@@ -82,7 +82,7 @@ class ForgotPasswordPage extends Component {
                         value={this.state.email}
                         onChange={(event) => this.handleEmailChange(event)}/>
                     </div>
-                    <div className='input-group-custom col-md-10 col-md-offset-1'>
+                    <div className='input-group-custom '>
                       <button
                         type='submit'
                         className='btn btn-primary-custom btn-block btn-css'
@@ -102,14 +102,15 @@ class ForgotPasswordPage extends Component {
       return (
         <div className='container'>
           <div className='container-form'>
-            <div className='member-component col-md-10 col-md-offset-1 clearfix'>
+            <div className='member-component col-md-5 col-md-offset-1 clearfix'>
               <div className='member-component-box'>
                 <div className='member-component-wrapper'>
-                  <div className='form-group-custom sign-up-success-title text-center'>Success</div>
-                  <div className='form-group-custom sign-up-success-title sign-up-success-text-1 text-center'>A email has been sent to your inbox. Please check your email.</div>
-                  <div className='form-group-custom sign-up-success-title text-center'> Thank you!</div>
+                  <div className='form-group-custom sign-up-success-title text-left'>Success!</div>
+                  <div className='form-group-custom sign-up-success-title sign-up-success-text-1 text-left'>A email has been sent to your inbox.</div>
+                  <div className='form-group-custom sign-up-success-title sign-up-success-text-1 text-left'>Please check your email.</div>
+                  <div className='form-group-custom sign-up-success-text-1 text-left'> Thank you!</div>
                   <hr/>
-                  <div className='form-group-custom col-md-8 col-md-offset-2'>
+                  <div className='form-group-custom'>
                     <button
                       type='submit'
                       className='btn btn-primary-custom btn-block btn-css'

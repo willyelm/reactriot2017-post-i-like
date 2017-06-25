@@ -1,3 +1,4 @@
+# This is comment top
 class RegisterUser
   prepend SimpleCommand
 
@@ -28,6 +29,9 @@ class RegisterUser
     if user.save
       object_user_id = { user_registration_id: user.id }
       token = JsonWebToken.encode(object_user_id, 72.hours.from_now)
+
+      user.update_column(:token, token)
+
       if Rails.env.to_s == 'test'
         UserMailer.register_user(user.id, token).deliver_now
       else
@@ -42,6 +46,6 @@ class RegisterUser
       return nil
     end
     errors.add(:register_user, 'Registration infomation is not correct.')
-    return nil
+    nil
   end
 end

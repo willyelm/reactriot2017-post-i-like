@@ -1,7 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
 let Cookies = require('js-cookie');
-'use strict';
 require('normalize.css/normalize.css');
 require('../styles/App.css');
 
@@ -51,11 +50,11 @@ class Layout extends React.Component {
                 </ul>
                 <ul className="nav navbar-nav navbar-right">
                   <li className="dropdown">
-                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i className="fa fa-user-circle-o" aria-hidden="true"></i> Account <span className="caret"></span></a>
+                    <a href={undefined} className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i className="fa fa-user-circle-o" aria-hidden="true"></i> Account <span className="caret"></span></a>
                     <ul className="dropdown-menu">
                       <li><a href="#/settings"><i className="fa fa-cogs" aria-hidden="true"></i> Settings</a></li>
                       <li role="separator" className="divider"></li>
-                      <li><a href="#" onClick={(event) => this._logout(event)}><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+                      <li><a href={undefined} onClick={(event) => this._logout(event)}><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
                     </ul>
                   </li>
                 </ul>

@@ -104,9 +104,7 @@ class SignUpPage extends Component {
                   <div
                     className='error-placeholder'
                     style={{'display': this.shouldShowErrorMessages() ? 'block' : 'none'}}
-                    dangerouslySetInnerHTML={{__html: this.state.errorMessages}}>
-
-                  </div>
+                    dangerouslySetInnerHTML={{__html: this.state.errorMessages}} />
                   <div className='input-group-custom form-group'>
                     <label>First Name</label>
                     <input
